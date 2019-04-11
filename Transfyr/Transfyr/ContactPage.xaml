@@ -1,12 +1,386 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Transfyr.ContactPage">
+             x:Class="Transfyr.ContactPage"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             BackgroundColor="{StaticResource logoBackgroundColor}"
+             x:Name="contactContentPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="DELETE"
+                     Clicked="DELETE_Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout x:Name="mAbsLayout" BackgroundColor="{StaticResource logoBackgroundColor}">
+            <Forms9Patch:Label Text="{Binding fullName}"
+                               AbsoluteLayout.LayoutBounds="0.5,0,0.98,0.15"
+                               AbsoluteLayout.LayoutFlags="All"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               BackgroundColor="{StaticResource logoBackgroundColor}"
+                               TextColor="{StaticResource logoDarkBlue}"
+                               AutoFit="Width" Lines="1" FontAttributes="Bold"/>
+            <ScrollView x:Name="mainScrollView"
+                        BackgroundColor="{StaticResource logoBackgroundColor}"
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0.5,1,0.98,0.85">
+                <AbsoluteLayout x:Name="mainAbsoluteLayout"
+                                BackgroundColor="{StaticResource logoBackgroundColor}">
+                    <Image x:Name="qrImage" Aspect="AspectFit"
+                                       Margin="1" BackgroundColor="{StaticResource logoBackgroundColor}"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand" 
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0,0.495,0.2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="qrImagePopup"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="profileImage" Aspect="AspectFit" 
+                           Margin="1" BackgroundColor="{StaticResource logoBackgroundColor}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand" 
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0,0,0.495,0.2"
+                           Source="{Binding item.personalImageLocation_bc}"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0.5,0,.015,.2"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.2019,1,.011"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Forms9Patch:Label x:Name="contactMessageLabel" 
+                                       Text="{Binding item.personalMessage}"
+                                       AbsoluteLayout.LayoutBounds="0,0.2105,1,0.05"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="100"
+                                       FontFamily="SignPainter"
+                                       Fit="Lines" Lines="2"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.252525,1,.011"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Forms9Patch:Label Text="Personal Information"
+                                       AbsoluteLayout.LayoutBounds="0,0.255102,1,0.02"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="{StaticResource logoLightBlue}"
+                                       TextColor="White"
+                                       Fit="Lines" Lines="1"/>
+                    <Forms9Patch:Label Text="{Binding positionCompany}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.28125,0.8,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="100"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label Text="{Binding fullLocation}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.322917,0.8,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="100"
+                                       Fit="Lines" Lines="0"/>
+                    <Image x:Name="companyImage" Aspect="AspectFit" 
+                           BackgroundColor="White"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand" 
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="1,0.293478,0.2,0.08"
+                           Source="{Binding item.companyImageLocation_bc}"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.353535,1,.011"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Forms9Patch:Label Text="Contact Information"
+                                       AbsoluteLayout.LayoutBounds="0,0.357143,1,0.02"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="{StaticResource logoLightBlue}"
+                                       TextColor="White" FontSize="100"
+                                       Fit="Lines" Lines="1"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.4204545,1,0.12"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="White"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.556818,1,0.12"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="White"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Forms9Patch:Label x:Name="emailLabel" Text="Email: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.385417,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}" 
+                                       Fit="Lines" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="emailLabelInfo" 
+                                       Text="{Binding item.userEmail}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.385417,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="sendEmail"/>
+                        </Label.GestureRecognizers>
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="phoneLabel" Text="Phone: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.427083,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="phoneLabelInfo" Text="{Binding item.personalPhoneNumber_bc}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.427083,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label x:Name="websiteLabel" 
+                                       Text="Website: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.46875,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Width" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="websiteLabelInfo" Text="{Binding item.personalWebsite_bc}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.46875,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label x:Name="linkedInLabel" Text="LinkedIn: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.510417,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="linkedInLabelInfo" Text="{Binding item.linkedin_bc}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.510417,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label x:Name="faxLabel" Text="Fax: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.552083,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="faxLabelInfo" 
+                                       Text="{Binding item.personalFax_bc}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.552083,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label x:Name="twitterLabel" Text="Twitter: "
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.59375,0.32,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0">
+                    </Forms9Patch:Label>
+                    <Forms9Patch:Label x:Name="twitterLabelInfo" Text="{Binding item.twitter_bc}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="1,0.59375,0.65,0.04"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="White"
+                                       TextColor="Black" FontSize="{Binding fontSizes[0]}"
+                                       Fit="Lines" Lines="0"/>
+                    <Forms9Patch:Label Text="Notes"
+                                       AbsoluteLayout.LayoutBounds="0,0.622449,1,0.02"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="{StaticResource logoLightBlue}"
+                                       TextColor="White" FontSize="100"
+                                       Fit="Lines" Lines="1"/>
+                    <Editor x:Name="personalMessageEntry" 
+                                       Text="{Binding notesOnContact}"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0,0.670213,1.0,0.06"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       BackgroundColor="{StaticResource logoLightGray}" 
+                                       TextColor="Black"/>
+                    <Button x:Name="savePersonalNotesButton"
+                            Text="SAVE"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="1,0.683673,0.2,0.02"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="{StaticResource logoLightBlue}"
+                            TextColor="White" FontAttributes="Bold"
+                            Clicked="savePersonalNotesButton_HandleClicked"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0,0.696970,1,.011"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Forms9Patch:Label Text="Group Notes"
+                                       AbsoluteLayout.LayoutBounds="0,0.704082,1,0.02"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       BackgroundColor="{StaticResource logoDarkBlue}"
+                                       TextColor="White" FontSize="100"
+                                       Fit="Lines" Lines="1"/>
+                    <ScrollView x:Name="groupScrollView"
+                                AbsoluteLayout.LayoutFlags="All"
+                                AbsoluteLayout.LayoutBounds="0,1,1,0.29"
+                                BackgroundColor="Black"
+                                Padding="5,5,5,5">
+                        <StackLayout x:Name="groupStackLayout"
+                                     BackgroundColor="{StaticResource logoBackgroundColor}"
+                                     Padding="5,5,5,5">
+                            <ListView x:Name="groupListView"
+                                      ItemsSource="{Binding groupList.DataListGroup, Mode=TwoWay}"
+                                      BackgroundColor="{StaticResource logoBackgroundColor}"
+                                      RowHeight="{Binding rowHeight}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <AbsoluteLayout
+                                                BackgroundColor="Black"
+                                                Padding="2,2,2,2"
+                                                Margin="0,0,0,5">
+                                                <Forms9Patch:Label Text="{Binding item.groupName}"
+                                                                   AbsoluteLayout.LayoutFlags="All"
+                                                                   AbsoluteLayout.LayoutBounds="0,0,1,.32"
+                                                                   BackgroundColor="Black"
+                                                                   TextColor="{StaticResource logoDarkBlue}"
+                                                                   FontSize="100"
+                                                                   VerticalOptions="FillAndExpand"
+                                                                   HorizontalOptions="FillAndExpand"
+                                                                   VerticalTextAlignment="Center"
+                                                                   HorizontalTextAlignment="Start"
+                                                                   Fit="Lines" Lines="1">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding groupPageCommand}"
+                                                                              CommandParameter="{Binding item.groupId}"/>
+                                                    </Label.GestureRecognizers>
+                                                </Forms9Patch:Label>
+
+                                                <Forms9Patch:Label Text="{Binding item.groupNotes}"
+                                                                   AbsoluteLayout.LayoutFlags="All"
+                                                                   AbsoluteLayout.LayoutBounds="0,1,1,.68"
+                                                                   BackgroundColor="White"
+                                                                   TextColor="Black" FontSize="100"
+                                                                   VerticalOptions="FillAndExpand"
+                                                                   HorizontalOptions="FillAndExpand"
+                                                                   VerticalTextAlignment="Center"
+                                                                   HorizontalTextAlignment="Start"
+                                                                   Fit="Lines" Lines="3">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding groupPageCommand}"
+                                                                              CommandParameter="{Binding item.groupId}"/>
+                                                    </Label.GestureRecognizers>
+                                                </Forms9Patch:Label>
+                                            </AbsoluteLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </ScrollView>
+                </AbsoluteLayout>
+            </ScrollView>
+            <BoxView BackgroundColor="{StaticResource logoBackgroundColor}"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,0.01"/>
+            <BoxView BackgroundColor="{StaticResource logoBackgroundColor}"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,1,1,0.01"/>
+            <BoxView BackgroundColor="{StaticResource logoBackgroundColor}"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,0.01,1"/>
+            <BoxView BackgroundColor="{StaticResource logoBackgroundColor}"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="1,0,0.01,1"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
