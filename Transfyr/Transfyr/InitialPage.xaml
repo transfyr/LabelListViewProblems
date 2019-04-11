@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             x:Class="Transfyr.InitialPage"
+             BackgroundColor="{StaticResource logoBackgroundColor}">
+    <Forms9Patch:AbsoluteLayout x:Name="mainAbsoluteLayout" 
+                        VerticalOptions="Center"
+                        Margin="20,10,20,10"
+                        BackgroundColor="{StaticResource logoBackgroundColor}"
+                        WidthRequest="50000"
+                        HeightRequest="50000">
+        <Image x:Name="iconImage"
+                   BackgroundColor="Transparent"
+                   Aspect="AspectFit"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.0, 0.1, 1.0, 0.45"/>
+        <Grid x:Name="LinkedInGrid"
+                  ColumnSpacing="0"
+                  AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0.5,0.6,0.8,0.1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "*" />
+            </Grid.RowDefinitions >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width = "Auto"/>
+            </Grid.ColumnDefinitions >
+            <BoxView x:Name="MarginBoxViewLinkedIn"
+                         BackgroundColor="{StaticResource LinkedInBackground}"
+                         Margin="0,0,0,0"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="0"/>
+            <BoxView x:Name="LinkedInImageBoxView"
+                         BackgroundColor="{StaticResource LinkedInBackground}"
+                         Margin="0,0,0,0"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="2"/>
+            <Image x:Name="LinkedInImage"
+                       Aspect="AspectFit" 
+                       VerticalOptions="FillAndExpand"
+                       Margin="0,0,0,0"
+                       BackgroundColor="Transparent"
+                       Grid.Row="0" Grid.Column="2"/>
+            <Forms9Patch:Label x:Name="LinkedInLabel"
+                                   WidthRequest="50000"
+                                   HeightRequest="50000"
+                                   FontSize="100"
+                                   Text="Connect with LinkedIn"
+                                   BackgroundColor="{StaticResource LinkedInBackground}"
+                                   TextColor="White"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   Fit="Width" Lines="1"
+                                   Grid.Row="0" Grid.Column="1">
+                <Forms9Patch:Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped = "toAuth0LogIn"/>
+                </Forms9Patch:Label.GestureRecognizers>
+            </Forms9Patch:Label>
+        </Grid>
+        <!--<Grid x:Name="FacebookGrid"
+                  ColumnSpacing="0"
+                  AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0.5,0.8,0.5,0.1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <BoxView x:Name="MarginBoxViewFacebook"
+                         BackgroundColor="{StaticResource FacebookBackground}"
+                         Margin="0,0,0,0"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="0"/>
+                <BoxView x:Name="FacebookImageBoxView"
+                         BackgroundColor="{StaticResource FacebookBackground}"
+                         Margin="0,0,0,0"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="2"/>
+                <Image x:Name="FacebookImage"
+                       Aspect="AspectFit" 
+                       VerticalOptions="FillAndExpand"
+                       Margin="0,0,0,0"
+                       BackgroundColor="Transparent"
+                       Grid.Row="0" Grid.Column="2"/>
+                <Forms9Patch:Label x:Name="FacebookLabel"
+                                   Text="Connect with Facebook"
+                                   BackgroundColor="{StaticResource FacebookBackground}"
+                                   FontSize="100"
+                                   TextColor="White"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   Margin="0,0,0,0" Fit="Width" Lines="1"
+                                   Grid.Row="0" Grid.Column="1">
+                    <Forms9Patch:Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped = "toAuth0LogIn"/>
+                    </Forms9Patch:Label.GestureRecognizers>
+                </Forms9Patch:Label>
+            </Grid>
+            <Grid x:Name="GooglePlusGrid"
+                  ColumnSpacing="0"
+                  AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0.5,0.925,0.5,0.1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <BoxView x:Name="MarginBoxViewGooglePlus"
+                         BackgroundColor="{StaticResource GooglePlusBackground}"
+                         Margin="0,0,0,0"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="0"/>
+                <BoxView x:Name="GooglePlusImageBoxView"
+                         BackgroundColor="{StaticResource GooglePlusBackground}"
+                         Margin="0,0,0,0"
+                         VerticalOptions="FillAndExpand"
+                         Grid.Row="0" Grid.Column="2"/>
+                <Image x:Name="GooglePlusImage"
+                       Aspect="AspectFit" 
+                       VerticalOptions="FillAndExpand"
+                       Margin="0,0,0,0"
+                       BackgroundColor="Transparent"
+                       Grid.Row="0" Grid.Column="2"/>
+                <Forms9Patch:Label x:Name="GooglePlusLabel"
+                                   Text="Connect with Google+"
+                                   BackgroundColor="{StaticResource GooglePlusBackground}"
+                                   TextColor="White"
+                                   FontSize="100"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   Margin="0,0,0,0" Fit="Width" Lines="1"
+                                   Grid.Row="0" Grid.Column="1">
+                    <Forms9Patch:Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="toAuth0LogIn"
+                                              TappedCallbackParameter="google"/>
+                    </Forms9Patch:Label.GestureRecognizers>
+                </Forms9Patch:Label>
+            </Grid>-->
+        <Forms9Patch:Label x:Name="EmailLabel"
+                               Text="Email LogIn"
+                               BackgroundColor="{StaticResource logoBackgroundColor}"
+                               TextColor="Black" FontAttributes="Italic"
+                               FontSize="100"
+                               VerticalOptions="FillAndExpand"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,0,0,0" Fit="Width" Lines="1"
+                               AbsoluteLayout.LayoutFlags="All"
+                               AbsoluteLayout.LayoutBounds="0.0, 1, 0.20, 0.1">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="toEmailLogIn"/>
+            </Label.GestureRecognizers>
+        </Forms9Patch:Label>
+    </Forms9Patch:AbsoluteLayout>
+</ContentPage>

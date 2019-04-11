@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Transfyr.EditGroupPage"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="DELETE"
+                     Clicked="DELETE_Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Button x:Name="saveButton"
+                    Text="SAVE"
+                    BackgroundColor="{StaticResource logoLightBlue}"
+                    TextColor="White"
+                    Clicked="saveButton_ClickedAsync"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0.5,1,1,0.05"/>
+            <ScrollView x:Name="mainScrollView"
+                        BackgroundColor="{StaticResource logoBackgroundColor}"
+                        Padding="5,0,5,10"
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,0.95">
+                <AbsoluteLayout x:Name="mainAbsoluteLayout" 
+                                BackgroundColor="{StaticResource logoBackgroundColor}">
+                    <Image x:Name="qrImage" Aspect="AspectFit" 
+                           Margin="1" BackgroundColor="{StaticResource logoBackgroundColor}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand" 
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0.5,0,0.45,0.3">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="qrImagePopup"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="transfyrLogo1" Aspect="AspectFit"
+                           BackgroundColor="{StaticResource logoBackgroundColor}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0,0,0.275,0.3"/>
+                    <Image x:Name="transfyrLogo2" Aspect="AspectFit"
+                           BackgroundColor="{StaticResource logoBackgroundColor}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="1,0,0.275,0.3"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0.5,0,1,10"
+                             AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <BoxView AbsoluteLayout.LayoutBounds="0.5,0.303,1,.015"
+                             AbsoluteLayout.LayoutFlags="All"
+                             BackgroundColor="{StaticResource logoBackgroundColor}"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"/>
+                    <Entry x:Name="groupName" 
+                           Placeholder="Enter Group Name"
+                           BackgroundColor="Black"
+                           PlaceholderColor="{StaticResource logoDarkBlue}"
+                           TextColor="{StaticResource logoDarkBlue}" 
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0.5,0.31579,1,0.05"/>
+                    <Entry x:Name="groupNotes" 
+                           Placeholder="Enter Group Notes"
+                           BackgroundColor="Black"
+                           PlaceholderColor="{StaticResource logoDarkBlue}"
+                           TextColor="{StaticResource logoDarkBlue}"
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0.5,0.39444,1,0.10"/>
+                    <SearchBar x:Name="searchBar" 
+                               Placeholder="Search"
+                               TextChanged="Handle_TextChanged"
+                               AbsoluteLayout.LayoutFlags="All"
+                               AbsoluteLayout.LayoutBounds="0.5,0.4742268,1,0.03">
+                    </SearchBar>
+                    <ScrollView x:Name="memberScrollView" 
+                                BackgroundColor="Black"
+                                Padding="5,1,5,5"
+                                AbsoluteLayout.LayoutFlags="All"
+                                AbsoluteLayout.LayoutBounds="0.5,1,1,0.51">
+                        <StackLayout BackgroundColor="{StaticResource logoBackgroundColor}" 
+                                     Spacing="1">
+                            <ListView x:Name="memberStackLayout"
+                                      ItemsSource="{Binding DataList}"
+                                      BackgroundColor="{StaticResource logoBackgroundColor}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid BackgroundColor="{StaticResource logoBackgroundColor}">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="5"/>
+                                                    <ColumnDefinition Width="7*"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding item.personalImageLocation_bc}"
+                                                       Grid.Column="0"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="CenterAndExpand"/>
+                                                <Forms9Patch:Label Text="{Binding fullName}"
+                                                       Grid.Column="2" 
+                                                       Fit="Width" Lines="1"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       VerticalTextAlignment="Center"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalOptions="CenterAndExpand">
+                                                    <!--<Forms9Patch:Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding IsSelectedCommand}"/>
+                                                    </Forms9Patch:Label.GestureRecognizers>-->
+                                                </Forms9Patch:Label>
+                                                <Switch IsToggled="{Binding IsSelected}"
+                                                        Grid.Column="3"
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.Footer>
+                                    <Label />
+                                </ListView.Footer>
+                            </ListView>
+                        </StackLayout>
+                    </ScrollView>
+                </AbsoluteLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

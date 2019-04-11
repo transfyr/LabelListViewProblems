@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Transfyr.IndividualPage"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             x:Name="individualPage"
+             BackgroundColor="{StaticResource logoLightBlue}">
+
+    <AbsoluteLayout x:Name="mAbsLayout">
+        <SearchBar x:Name="searchBar" 
+                   BackgroundColor="White" 
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   CancelButtonColor="{StaticResource logoLightBlue}"
+                   Placeholder="Search"
+                   TextChanged="Handle_TextChanged"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,.03">
+        </SearchBar>
+        <ScrollView x:Name="mainScrollView" 
+                    BackgroundColor="{StaticResource logoLightBlue}"
+                    Padding="10,1,10,10"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,1,1,.97">
+            <StackLayout x:Name="mainStackLayout" 
+                         BackgroundColor="{StaticResource logoLightBlue}" Spacing="1">
+                <Forms9Patch:Label x:Name="contactlessLabel" FontSize="100"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="Center"
+                                   BackgroundColor="Transparent"
+                                   Text="No Transfyr cards yet. Start scanning!"
+                                   MinimumWidthRequest="0" MinimumHeightRequest="0"
+                                   WidthRequest="0" HeightRequest="0"/>
+                <ListView x:Name="contactStackLayout"
+                          ItemsSource="{Binding DataList, Mode=TwoWay}"
+                          BackgroundColor="{StaticResource logoLightBlue}" RowHeight="200"
+                          IsPullToRefreshEnabled="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="1" Margin="0,0,0,5" 
+                                      BackgroundColor="White" 
+                                      RowSpacing="1" ColumnSpacing="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="5*"/>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--<BoxView Grid.Row="0" Grid.Column="0"
+                                             Grid.ColumnSpan="4"-->
+                                    <Image Source="{Binding item.personalImageLocation_bc}"
+                                           Grid.Row="0" Grid.Column="0"
+                                           Grid.RowSpan="4" Aspect="AspectFit" 
+                                           HorizontalOptions="CenterAndExpand" 
+                                           VerticalOptions="CenterAndExpand"
+                                           BackgroundColor="White">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                  CommandParameter="{Binding item.userId}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Forms9Patch:Label x:Name="fullNameLabel"
+                                           Text="{Binding fullName}"
+                                           Grid.Row="0" Grid.Column="1"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="100"
+                                           TextColor="{StaticResource logoDarkBlue}"
+                                           BackgroundColor="White"
+                                           AutoFit="Lines" Lines="0">
+                                        <Forms9Patch:Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                  CommandParameter="{Binding item.userId}"/>
+                                        </Forms9Patch:Label.GestureRecognizers>
+                                    </Forms9Patch:Label>
+                                    <Forms9Patch:Label x:Name="positionCompanyLabel" 
+                                           Text="{Binding positionCompany}"
+                                           Grid.Row="1" Grid.Column="1"
+                                           Grid.ColumnSpan="2"
+                                           FontSize="100"
+                                           BackgroundColor="White"
+                                           TextColor="Black"
+                                           AutoFit="Lines" Lines="0"/>
+                                    <Forms9Patch:Label x:Name="fullLocationLabel" 
+                                           Text="{Binding fullLocation}"
+                                           Grid.Row="2" Grid.Column="1"
+                                           Grid.ColumnSpan="2" FontSize="100"
+                                           BackgroundColor="White"
+                                           TextColor="Black"
+                                           Fit="Lines" Lines="0"/>
+                                    <Image Source="{Binding item.companyImageLocation_bc}"
+                                           Grid.Row="1" Grid.Column="3"
+                                           Grid.RowSpan="2" Aspect="AspectFit" 
+                                           HorizontalOptions="CenterAndExpand" 
+                                           VerticalOptions="CenterAndExpand"
+                                           BackgroundColor="Transparent"/>
+                                    <Forms9Patch:Label x:Name="personalMessageLabel" 
+                                           Text="{Binding item.personalMessage}"
+                                           Grid.Row="3" Grid.Column="1"
+                                           Grid.ColumnSpan="3" FontSize="100"
+                                           BackgroundColor="{StaticResource logoLightBlue}"
+                                           TextColor="Black"
+                                           Fit="Lines" Lines="2"/>
+                                    <Forms9Patch:Label x:Name="userNotesLabel" 
+                                           Text="{Binding notesOnContact}"
+                                           Grid.Row="4" Grid.RowSpan="2"
+                                           Grid.ColumnSpan="4" FontSize="100"
+                                           BackgroundColor="{StaticResource logoLightGray}"
+                                           TextColor="Black"
+                                           Fit="Lines" Lines="3">
+                                        <Forms9Patch:Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                  CommandParameter="{Binding item.userId}"/>
+                                        </Forms9Patch:Label.GestureRecognizers>
+                                    </Forms9Patch:Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        <Forms9Patch:Button x:Name="qrImageButton"
+                            BackgroundColor="White"
+                            OutlineColor="Black" OutlineWidth="1"
+                            ElementShape="Circle" TintIcon="false"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="1,.9,.2,.2"/>
+    </AbsoluteLayout>
+
+</ContentPage>

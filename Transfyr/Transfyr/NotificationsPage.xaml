@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             x:Class="Transfyr.NotificationsPage">
+    <AbsoluteLayout x:Name="mAbsLayout">
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label Text="Welcome to the Notifications Page!"/>
+        </StackLayout>
+        <Forms9Patch:Button x:Name="qrImageButton"
+                            BackgroundColor="White"
+                            OutlineColor="Black" OutlineWidth="1"
+                            ElementShape="Circle" TintIcon="false"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="1,.9,.2,.2"/>
+    </AbsoluteLayout>
+
+</ContentPage>

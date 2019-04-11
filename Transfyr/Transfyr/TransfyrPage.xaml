@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Transfyr" 
+             x:Class="Transfyr.TransfyrPage"
+             x:Name="logInPageContentPage"
+             BackgroundColor="Silver">
+
+    <AbsoluteLayout x:Name="mainAbsoluteLayout" 
+                    VerticalOptions="Center"
+                    Margin="20,10,20,10"
+                    BackgroundColor="Silver"
+                    WidthRequest="50000"
+                    HeightRequest="50000">
+        <Image x:Name="iconImage"
+               Aspect="AspectFit"
+               HorizontalOptions="CenterAndExpand"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.5,0.1,1.0,0.4"/>
+        <Entry x:Name="emailEntry"
+               Placeholder="Email address"
+               Keyboard="Email"
+               PlaceholderColor="Black"
+               BackgroundColor="White"
+               TextColor="Black"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.5,0.6,0.7,0.075"/>
+        <Entry x:Name="passwordEntry"
+               Placeholder="Password"
+               IsPassword="true"
+               PlaceholderColor="Black"
+               BackgroundColor="White"
+               TextColor="Black"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.5,0.69,0.7,0.075"/>
+        <Button x:Name="LoginButton"
+                Text="Log In"
+                Clicked="LoginButton_ClickedAsync"
+                BackgroundColor="Navy"
+                TextColor="White"
+                Font="Courier"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                AbsoluteLayout.LayoutBounds="0.5,.95,0.5,0.4"
+                AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>
+
+</ContentPage>

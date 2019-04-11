@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Transfyr.GroupPage"
+             x:Name="groupPageContent"
+             xmlns:Assets="clr-namespace:Transfyr.Assets"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             BackgroundColor="{StaticResource logoBackgroundColor}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create Group"
+                     Clicked="ADD_Handle_ClickedAsync" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout x:Name="mAbsLayout">
+        <SearchBar x:Name="searchBar" 
+                   BackgroundColor="White" 
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   CancelButtonColor="{StaticResource logoLightBlue}"
+                   Placeholder="Search"
+                   TextChanged="Handle_TextChanged"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,.03">
+        </SearchBar>
+        <ScrollView x:Name="mainScrollView" 
+                    BackgroundColor="{StaticResource logoBackgroundColor}"
+                    Padding="10,1,10,10"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,1,1,.97">
+            <StackLayout x:Name="mainStackLayout" 
+                         BackgroundColor="{StaticResource logoBackgroundColor}">
+                <Forms9Patch:Label x:Name="grouplessLabel" FontSize="100"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="Center" 
+                                   BackgroundColor="Transparent"
+                                   Text="No Transfyr groups yet. Start scanning!"
+                                   MinimumWidthRequest="0" MinimumHeightRequest="0"
+                                   WidthRequest="0" HeightRequest="0"/>
+                <ListView x:Name="groupStackLayout"
+                          ItemsSource="{Binding DataListGroup, Mode=TwoWay}" RowHeight="200"
+                          BackgroundColor="{StaticResource logoLightBlue}"
+                          IsPullToRefreshEnabled="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="1" Margin="1,1,1,1" HeightRequest="200"
+                                      BackgroundColor="White" 
+                                      RowSpacing="1" ColumnSpacing="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="17*"/>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="53*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Forms9Patch:Label BackgroundColor="Black"
+                                                       Text="{Binding item.groupName}"
+                                                       TextColor="{StaticResource logoDarkBlue}"
+                                                       AutoFit="Lines" Lines="0"
+                                                       FontAttributes="Bold"
+                                                       Grid.Row="0" Grid.Column="0">
+                                        <Forms9Patch:Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding groupPageCommand}"
+                                                                  CommandParameter="{Binding item.groupId}"/>
+                                        </Forms9Patch:Label.GestureRecognizers>
+                                    </Forms9Patch:Label>
+                                    <Image x:Name="emailImage"
+                                           Source="{Binding darkBlueEmailImage}"
+                                           BackgroundColor="Black" 
+                                           Grid.Row="0" Grid.Column="1">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding emailMembersCommand}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <!--<Image x:Name="emailImage" 
+                                           BackgroundColor="Black" 
+                                           Source="TransfyrApp0.Assets.Images.darkBlueEmailPic.png"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           Aspect="AspectFit"
+                                           Grid.Row="0" Grid.Column="1">
+                                        <Image.Source>
+                                            <FileImageSource File="TransfyrApp0.Assets.Images.darkBlueEmailPic.png"/>
+                                        </Image.Source>
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                  CommandParameter="{Binding memberId}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>-->
+                                    <Forms9Patch:Label BackgroundColor="{StaticResource logoLightBlue}"
+                                                       Text="{Binding item.groupNotes}"
+                                                       TextColor="Black"
+                                                       AutoFit="Lines" Lines="3"
+                                                       Grid.Row="1" Grid.Column="0"
+                                                       Grid.ColumnSpan="2">
+                                        <Forms9Patch:Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding groupPageCommand}"
+                                                                  CommandParameter="{Binding item.groupId}"/>
+                                        </Forms9Patch:Label.GestureRecognizers>
+                                    </Forms9Patch:Label>
+                                    <ScrollView Orientation="Horizontal"
+                                                Grid.Row="2" Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                BackgroundColor="Black">
+                                        <RelativeLayout HeightRequest="90"
+                                                        BackgroundColor="Black">
+                                            <ListView Rotation="270" RowHeight="90" HeightRequest="90"
+                                                      BackgroundColor="Black"
+                                                      ItemsSource="{Binding members}"
+                                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-45}"
+                                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=45}"
+                                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=90}"
+                                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <ViewCell>
+                                                            <Grid Rotation="90" TranslationX="90" 
+                                                                  Padding="1" Margin="0" 
+                                                                  BackgroundColor="Black" 
+                                                                  RowSpacing="0" ColumnSpacing="0">
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="77*"/>
+                                                                    <RowDefinition Height="1*"/>
+                                                                    <RowDefinition Height="22*"/>
+                                                                    <RowDefinition Height="1*"/>
+                                                                </Grid.RowDefinitions>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Image BackgroundColor="Black"
+                                                                       WidthRequest="{Binding memberWidth}"
+                                                                       Source="{Binding personalImageLocation_bc}"
+                                                                       HorizontalOptions="CenterAndExpand"
+                                                                       Aspect="AspectFit"
+                                                                       Grid.Row="0" Grid.Column="0">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                                              CommandParameter="{Binding memberId}"/>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                                <Forms9Patch:Label BackgroundColor="Black"
+                                                                                   Text="{Binding memberFullName}"
+                                                                                   TextColor="{StaticResource logoLightBlue}"
+                                                                                   FontFamily="Courier"
+                                                                                   WidthRequest="90"
+                                                                                   AutoFit="Width" Lines="0"
+                                                                                   HorizontalTextAlignment="Center"
+                                                                                   Grid.Row="2" Grid.Column="0">
+                                                                    <Forms9Patch:Label.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding contactPageCommand}"
+                                                                                              CommandParameter="{Binding memberId}"/>
+                                                                    </Forms9Patch:Label.GestureRecognizers>
+                                                                </Forms9Patch:Label>
+                                                            </Grid>
+                                                        </ViewCell>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </RelativeLayout>
+                                    </ScrollView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        <Forms9Patch:Button x:Name="qrImageButton"
+                            Clicked="qrImageButton_ClickedAsync"
+                            BackgroundColor="White"
+                            OutlineColor="Black" OutlineWidth="1"
+                            ElementShape="Circle" TintIcon="false"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="1,.9,.2,.2"/>
+    </AbsoluteLayout>
+
+</ContentPage>

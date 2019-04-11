@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Transfyr.App"
+             xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="logoDarkBlue">#0b7999</Color>
+            <Color x:Key="logoLightBlue">#1c95c1</Color>
+            <Color x:Key="logoLightGray">#a5a5a8</Color>
+            <Color x:Key="logoDarkGray">#99999c</Color>
+            <Color x:Key="logoBusinessCardGray">#767676</Color>
+            <Color x:Key="logoBackgroundColor">#c0c0c0</Color>
+            <Color x:Key="LinkedInBackground">#0077B5</Color>
+            <Color x:Key="GooglePlusBackground">#D34836</Color>
+            <Color x:Key="FacebookBackground">#3B5998</Color>
+            <Style TargetType="Forms9Patch:Label">
+                <Setter Property="FontSize" Value="100"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
