@@ -1,5 +1,7 @@
 ﻿using FFImageLoading;
 using Plugin.Messaging;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ using Transfyr.Helpers;
 using Transfyr.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace Transfyr
 {
@@ -18,6 +21,7 @@ namespace Transfyr
     {
         public SelectableUserWrapper<User> contactInformation;
         public Forms9Patch.ModalPopup qrImageModal;
+        public ZXingScannerPage scanPage;
 
         public PersonalPage()
         {
@@ -58,7 +62,7 @@ namespace Transfyr
             qrImageModal = modal;
             qrImageButton.IconImage = new Forms9Patch.Image
             {
-                Source = ImageSource.FromResource("TransfyrApp0.Assets.Images.Transfyr-FinalLogo-PicOnlyPlusScan.png", assembly)
+                Source = ImageSource.FromResource("Transfyr.Assets.Images.Transfyr-FinalLogo-PicOnlyPlusScan.png", assembly)
             };
         }
 
@@ -66,24 +70,16 @@ namespace Transfyr
         {
             base.OnAppearing();
 
-            //get image stream for personal image
-            HttpClient webclient = new HttpClient();
-            byte[] imageBytes = await webclient.GetByteArrayAsync(App.user.personalImageLocation_bc);
-            //byte[] resizedImage = await CrossImageResizer.Current
-
             ////height, width, radius for qrImage
             qrImageButton.OutlineRadius = Convert.ToInt32(mAbsLayout.Height / 20);
             qrImageButton.WidthRequest = Convert.ToInt32(mAbsLayout.Height / 20) * 2;
             qrImageButton.HeightRequest = Convert.ToInt32(mAbsLayout.Height / 20) * 2;
 
 
-            qrImageModal.HeightRequest = Convert.ToInt32(Math.Min(mScrollView.Height, mScrollView.Width) * 7.0 / 10.0);
-            qrImageModal.WidthRequest = Convert.ToInt32(Math.Min(mScrollView.Height, mScrollView.Width) * 7.0 / 10.0);
+            qrImageModal.HeightRequest = Convert.ToInt32(Math.Min(mAbsLayout.Height, mAbsLayout.Width) * 7.0 / 10.0);
+            qrImageModal.WidthRequest = Convert.ToInt32(Math.Min(mAbsLayout.Height, mAbsLayout.Width) * 7.0 / 10.0);
 
             await Functions.refreshUserInfoAsync();
-            //personalImage.Source = "";
-            //personalImage.Source = ImageSource.FromUri(new Uri(App.user.personalImageLocation_bc));
-            //companyImage.Source = ImageSource.FromUri(new Uri(App.user.companyImageLocation_bc));
             contactInformation = new SelectableUserWrapper<User>
             {
                 item = App.user,
@@ -92,12 +88,75 @@ namespace Transfyr
                 positionCompany = Functions.getPositionCompany(App.user),
             };
             BindingContext = contactInformation;
-            var profileImageSource = await ImageService.Instance.LoadUrl(App.user.personalImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
-            profileImage.Source = ImageSource.FromStream(() => profileImageSource);
-            //personalImage.WidthRequest = Convert.ToInt32(mainAbsoluteLayout.Width * 0.15);
-            //personalImage.HeightRequest = Convert.ToInt32(mainAbsoluteLayout.Height * 0.15);
-            //companyImage.WidthRequest = Convert.ToInt32(mainAbsoluteLayout.Width * 0.07);
-            //companyImage.HeightRequest = Convert.ToInt32(mainAbsoluteLayout.Height * 0.07);
+        }
+
+        public async void qrImageButton_ClickedAsync(object sender, System.EventArgs e)
+        {
+            //obtain permissions of the Camera 
+            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            //check if permission status is already granted for the camera and photo storage. If not, request permission
+            if (cameraStatus != PermissionStatus.Granted)
+            {
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera });
+                cameraStatus = results[Permission.Camera];
+            }
+            //if the permission is not granted, display an alert and return the function
+            if (!(cameraStatus == PermissionStatus.Granted))
+            {
+                await DisplayAlert("Permissions Denied", "Unable to use camera.", "OK");
+                return;
+            }
+
+            scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true });
+            scanPage.OnScanResult += async (result) =>
+            {
+                scanPage.IsScanning = false;
+                string resultText = result.Text;
+                if (!resultText.Contains("Transfyr"))
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Image Scan Error", "Transfyr QR Image was not scanned.", "Ok");
+                    });
+                    return;
+                }
+                //push received result to the api
+                //obtain the url
+                var url = Constants.AWS_RDS_API;
+                //input the type into the url.
+                url = url + "type=qrimagescan";
+                url = url + "&userid=" + App.user.userId;
+                url = url + "&qrcode=" + Functions.StringAPIReady(resultText);
+                await Functions.TransfyrAPICallAsync(url);
+                if (App.typeError != 0)
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Unknown Error", "Unknown Error. Please try again.", "Ok");
+                    });
+                    return;
+                }
+                if (App.justAdded == "-1")
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Error", "User or group not detected. User or group may be deleted.", "Ok");
+                    });
+                    return;
+                }
+                //if there is not an error, display the person's full name 
+                //or group that was added's name.
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Navigation.PopAsync();
+                    DisplayAlert("Success", App.justAdded, "Ok");
+                });
+                return;
+            };
+            await Navigation.PushAsync(scanPage);
         }
 
         public TapGestureRecognizer sendEmail()

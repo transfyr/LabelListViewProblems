@@ -29,33 +29,42 @@ namespace Transfyr
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             //await Functions.refreshUserInfoAsync(); 
             //set all values in the page
             obtainContactInformation();
             BindingContext = contactInformation;
-            try
-            {
-                var personalImageSource = await ImageService.Instance.LoadUrl(App.user.personalImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
-                personalImage.Source = ImageSource.FromStream(() => personalImageSource);
-                // Uri uri = new Uri(App.user.personalImageLocation_bc);
-                // personalImage.Source = ImageSource.FromUri(uri);
-            }
-            catch { }
-            try
-            {
-                var companyImageSource = await ImageService.Instance.LoadUrl(App.user.companyImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
-                companyImage.Source = ImageSource.FromStream(() => companyImageSource);
-                // Uri uri2 = new Uri(App.user.companyImageLocation_bc);
-                // companyImage.Source = ImageSource.FromUri(uri2);
-            }
-            catch { }
+            //try
+            //{
+            //    var personalImageSource = await ImageService.Instance.LoadUrl(App.user.personalImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
+            //    personalImage.Source = ImageSource.FromStream(() => personalImageSource);
+            //    // Uri uri = new Uri(App.user.personalImageLocation_bc);
+            //    // personalImage.Source = ImageSource.FromUri(uri);
+            //}
+            //catch { }
+            //try
+            //{
+            //    var companyImageSource = await ImageService.Instance.LoadUrl(App.user.companyImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
+            //    companyImage.Source = ImageSource.FromStream(() => companyImageSource);
+            //    // Uri uri2 = new Uri(App.user.companyImageLocation_bc);
+            //    // companyImage.Source = ImageSource.FromUri(uri2);
+            //}
+            //catch { }
         }
 
         protected internal async void changePhoto(object sender, System.EventArgs e)
         {
+            //add a semi dark transparent layer to the screen, due to loading
+            BoxView boxv = new BoxView()
+            {
+                BackgroundColor = Color.DimGray,
+                Opacity = 0.5
+            };
+            AbsoluteLayout.SetLayoutFlags(boxv, AbsoluteLayoutFlags.All);
+            AbsoluteLayout.SetLayoutBounds(boxv, new Rectangle(0, 0, 1, 1));
+            mainAbsoluteLayout.Children.Add(boxv);
             //obtain permissions of the Camera and photo storage
             var photoStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Photos);
             var medialibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.MediaLibrary);
@@ -63,15 +72,16 @@ namespace Transfyr
             //check if permission status is already granted for the camera and photo storage. If not, request permission
             if (photoStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted || medialibraryStatus != PermissionStatus.Granted)
             {
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Photos, Permission.Storage, Permission.MediaLibrary });
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Photos });
                 photoStatus = results[Permission.Photos];
+                results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Storage });
                 storageStatus = results[Permission.Storage];
-                medialibraryStatus = results[Permission.MediaLibrary];
             }
             //if the permission is not granted, display an alert and return the function
-            if (!(photoStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted && medialibraryStatus == PermissionStatus.Granted))
+            if (!(photoStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted))
             {
                 await DisplayAlert("Permissions Denied", "Unable to take photos.", "OK");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 return;
             }
 
@@ -80,6 +90,7 @@ namespace Transfyr
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
                 await DisplayAlert("Error", "Changing the photo is not supported on this device.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 return;
             }
 
@@ -93,6 +104,7 @@ namespace Transfyr
             if (selectedImageFile == null)
             {
                 await DisplayAlert("Possible Error", "No image selected or an error occurred.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 return;
             }
 
@@ -115,6 +127,7 @@ namespace Transfyr
                 else
                 {
                     await DisplayAlert("Image Error", "Image selected must be png or jpg format.", "Ok");
+                    mainAbsoluteLayout.Children.Remove(boxv);
                     return;
                 }
                 imageStream = new MemoryStream(cropedBytes);
@@ -134,6 +147,7 @@ namespace Transfyr
             if (App.typeError != 0)
             {
                 await DisplayAlert("Unknown Error", "Unknown Error. Please try again.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 return;
             }
             //if image was successfully loaded to AWS S3, reload contact information and 
@@ -183,17 +197,27 @@ namespace Transfyr
             if (user.lastName_bc.Length > 20) { await DisplayAlert("Error", "Last Name needs to be less than 20 characters.", "Ok"); return; }
             if (user.suffix_bc.Length > 6) { await DisplayAlert("Error", "Suffix needs to be less than 6 characters.", "Ok"); return; }
             if (user.personalPhoneNumber_bc.Length > 20) { await DisplayAlert("Error", "Phone Number needs to be less than 20 characters.", "Ok"); return; }
-            if (user.personalWebsite_bc.Length > 40) { await DisplayAlert("Error", "Personal Website needs to be less than 40 characters.", "Ok"); return; }
-            if (user.linkedin_bc.Length > 40) { await DisplayAlert("Error", "LinkedIn needs to be less than 40 characters.", "Ok"); return; }
-            if (user.twitter_bc.Length > 40) { await DisplayAlert("Error", "Twitter needs to be less than 40 characters.", "Ok"); return; }
+            if (user.personalWebsite_bc.Length > 100) { await DisplayAlert("Error", "Personal Website needs to be less than 40 characters.", "Ok"); return; }
+            if (user.linkedin_bc.Length > 100) { await DisplayAlert("Error", "LinkedIn needs to be less than 40 characters.", "Ok"); return; }
+            if (user.twitter_bc.Length > 100) { await DisplayAlert("Error", "Twitter needs to be less than 40 characters.", "Ok"); return; }
             if (user.personalFax_bc.Length > 20) { await DisplayAlert("Error", "Fax needs to be less than 20 characters.", "Ok"); return; }
             if (user.jobTitle_bc.Length > 20) { await DisplayAlert("Error", "Job Title needs to be less than 20 characters.", "Ok"); return; }
             if (user.company_bc.Length > 20) { await DisplayAlert("Error", "Company Name needs to be less than 20 characters.", "Ok"); return; }
             if (user.companyCity_bc.Length > 20) { await DisplayAlert("Error", "Company City needs to be less than 20 characters.", "Ok"); return; }
             if (user.companyState_bc.Length > 20) { await DisplayAlert("Error", "Company State needs to be less than 20 characters.", "Ok"); return; }
             if (user.companyCountry_bc.Length > 20) { await DisplayAlert("Error", "Company Country needs to be less than 20 characters.", "Ok"); return; }
-            if (user.companyWebsite_bc.Length > 40) { await DisplayAlert("Error", "Company Website needs to be less than 40 characters.", "Ok"); return; }
+            if (user.companyWebsite_bc.Length > 100) { await DisplayAlert("Error", "Company Website needs to be less than 40 characters.", "Ok"); return; }
             if (user.personalMessage.Length > 100) { await DisplayAlert("Error", "Personal Message needs to be less than 100 characters.", "Ok"); return; }
+
+            //add a semi dark transparent layer to the screen, due to loading
+            BoxView boxv = new BoxView()
+            {
+                BackgroundColor = Color.DimGray,
+                Opacity = 0.5
+            };
+            AbsoluteLayout.SetLayoutFlags(boxv, AbsoluteLayoutFlags.All);
+            AbsoluteLayout.SetLayoutBounds(boxv, new Rectangle(0, 0, 1, 1));
+            mainAbsoluteLayout.Children.Add(boxv);
 
             //save userInformation that is needed to be saved
             if (App.user.prefix_bc != user.prefix_bc) { _userInfo = _userInfo + ",prefix_bc='" + Functions.StringAPIReady(App.user.prefix_bc) + "' "; }
@@ -230,6 +254,7 @@ namespace Transfyr
             if (App.typeError != 0)
             {
                 await DisplayAlert("Unknown Error", "Unknown Error. Please try again.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 return;
             }
             await DisplayAlert("Success", "Business Card Saved!", "Ok");

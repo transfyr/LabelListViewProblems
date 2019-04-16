@@ -16,6 +16,8 @@ namespace Transfyr
         public static User user = new User();
         public static List<Group> groupList = new List<Group>();
         public static List<User> contacts = new List<User>();
+        public static string justAdded = "";
+        public static Notifs notifs = new Notifs();
         public static int typeError = -1;
         public static double fontConstant1 = 30.0 / 440.0;
         public static double fontConstant2 = 30.0 / (871 * .27 * .2);

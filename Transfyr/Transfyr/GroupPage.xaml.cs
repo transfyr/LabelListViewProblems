@@ -99,14 +99,53 @@ namespace Transfyr
             }
 
             scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true });
-            scanPage.OnScanResult += (result) =>
+            scanPage.OnScanResult += async (result) =>
             {
                 scanPage.IsScanning = false;
+                string resultText = result.Text;
+                if (!resultText.Contains("Transfyr"))
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Image Scan Error", "Transfyr QR Image was not scanned.", "Ok");
+                    });
+                    return;
+                }
+                //push received result to the api
+                //obtain the url
+                var url = Constants.AWS_RDS_API;
+                //input the type into the url.
+                url = url + "type=qrimagescan";
+                url = url + "&userid=" + App.user.userId;
+                url = url + "&qrcode=" + Functions.StringAPIReady(resultText);
+                await Functions.TransfyrAPICallAsync(url);
+                if (App.typeError != 0)
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Unknown Error", "Unknown Error. Please try again.", "Ok");
+                    });
+                    return;
+                }
+                if (App.justAdded == "-1")
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Navigation.PopAsync();
+                        DisplayAlert("Error", "User or group not detected. User or group may be deleted.", "Ok");
+                    });
+                    return;
+                }
+                //if there is not an error, display the person's full name 
+                //or group that was added's name.
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
-                    DisplayAlert("Scanned Barcode", result.Text, "Ok");
+                    DisplayAlert("Success", App.justAdded, "Ok");
                 });
+                return;
             };
             await Navigation.PushAsync(scanPage);
         }

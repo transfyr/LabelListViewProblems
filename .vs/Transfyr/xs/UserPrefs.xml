@@ -1,0 +1,57 @@
+﻿<Properties StartupConfiguration="{4FC36D53-691D-470B-80D5-1F39BFBA9D2D}|Default">
+  <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.Transfyr.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A0497141-6E46-483C-8BFD-89265CC9BBFC" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/GroupPage.xaml">
+    <Files>
+      <File FileName="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs" Line="116" Column="46" />
+      <File FileName="Transfyr/Transfyr/App.xaml" />
+      <File FileName="Transfyr/Transfyr/App.xaml.cs" Line="31" Column="19" />
+      <File FileName="Transfyr/Transfyr/Model/Group.cs" Line="22" Column="10" />
+      <File FileName="Transfyr/Transfyr/Model/Notifs.cs" Line="41" Column="10" />
+      <File FileName="Transfyr/Transfyr/GroupPage.xaml" />
+      <File FileName="Transfyr/Transfyr/GroupPage.xaml.cs" Line="22" Column="42" />
+      <File FileName="Transfyr/Transfyr/EditGroupPage.xaml.cs" Line="199" Column="52" />
+      <File FileName="Transfyr/Transfyr/Model/MultiSelectViewModelClass.cs" Line="226" Column="16" />
+      <File FileName="Transfyr/Transfyr/Model/User.cs" Line="82" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Transfyr" expanded="True">
+            <Node name="Transfyr" expanded="True">
+              <Node name="Helpers" expanded="True" />
+              <Node name="Model" expanded="True">
+                <Node name="Queries" expanded="True" />
+              </Node>
+              <Node name="SourceCode" expanded="True">
+                <Node name="DPServices" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="GroupPage.xaml" expanded="True" selected="True" />
+              <Node name="IndividualPage.xaml" expanded="True" />
+              <Node name="NotificationsPage.xaml" expanded="True" />
+              <Node name="PersonalPage.xaml" expanded="True" />
+            </Node>
+            <Node name="Transfyr.Android" expanded="True">
+              <Node name="SourceCode" expanded="True">
+                <Node name="XCropImage" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Transfyr.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="106" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="110" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="117" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="119" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

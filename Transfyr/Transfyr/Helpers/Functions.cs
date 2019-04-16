@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Transfyr.Model;
 using Transfyr.Model.Queries;
+using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
 
 namespace Transfyr.Helpers
 {
@@ -161,7 +163,17 @@ namespace Transfyr.Helpers
                     App.user = UserLogIn.QueriedToUser(userLogIn.type.user);
                     App.groupList = userLogIn.type.group.Select(s => Group.QueriedToGroup(s)).ToList();
                     App.contacts = userLogIn.type.member.Select(s => UserLogIn.QueriedToMember(s)).ToList();
-
+                    try
+                    {
+                        App.notifs.indNotifs = Notifs.QueriedToNotifs(userLogIn.type.indNotifs);
+                        App.notifs.groupNotifs = Notifs.QueriedToNotifs(userLogIn.type.groupNotifs);
+                    }
+                    catch { }
+                    try
+                    {
+                        App.justAdded = userLogIn.type.justAdded;
+                    }
+                    catch { }
                 }
                 catch
                 {
@@ -188,5 +200,57 @@ namespace Transfyr.Helpers
             output = output.Replace("\'", "%Transfyr%APSTPHE%").Replace("\"", "%Transfyr%QUOTE%");
             return output;
         }
+
+        //public static ZXingScannerPage.ScanResultDelegate zxingPage(INavigation Navigation, ZXing.Result result, ZXingScannerPage scanPage)
+        //{
+            //ZXingScannerPage.ScanResultDelegate srd = new ZXingScannerPage.ScanResultDelegate(async (resut) =>
+            //{
+            //    scanPage.IsScanning = false;
+            //    string resultText = result.Text;
+            //    if (!resultText.Contains("Transfyr"))
+            //    {
+            //        Device.BeginInvokeOnMainThread(() =>
+            //        {
+            //            Navigation.PopAsync();
+            //            DisplayAlert("Image Scan Error", "Transfyr QR Image was not scanned.", "Ok");
+            //        });
+            //        return;
+            //    }
+            //        //push received result to the api
+            //        //obtain the url
+            //        var url = Constants.AWS_RDS_API;
+            //        //input the type into the url.
+            //        url = url + "type=qrimagescan";
+            //    url = url + "&userid=" + App.user.userId;
+            //    url = url + "&qrcode=" + Functions.StringAPIReady(resultText);
+            //    await Functions.TransfyrAPICallAsync(url);
+            //    if (App.typeError != 0)
+            //    {
+            //        Device.BeginInvokeOnMainThread(() =>
+            //        {
+            //            Navigation.PopAsync();
+            //            DisplayAlert("Unknown Error", "Unknown Error. Please try again.", "Ok");
+            //        });
+            //        return;
+            //    }
+            //    if (App.justAdded == "-1")
+            //    {
+            //        Device.BeginInvokeOnMainThread(() =>
+            //        {
+            //            Navigation.PopAsync();
+            //            DisplayAlert("Error", "User or group not detected. User or group may be deleted.", "Ok");
+            //        });
+            //        return;
+            //    }
+            //        //if there is not an error, display the person's full name 
+            //        //or group that was added's name.
+            //        Device.BeginInvokeOnMainThread(() =>
+            //    {
+            //        Navigation.PopAsync();
+            //        DisplayAlert("Success", App.justAdded, "Ok");
+            //    });
+            //    return;
+            //};)
+            //}
     }
 }

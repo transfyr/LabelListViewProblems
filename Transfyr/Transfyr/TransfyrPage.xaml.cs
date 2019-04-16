@@ -68,6 +68,17 @@ namespace Transfyr
                     App.user = UserLogIn.QueriedToUser(userLogIn.type.user);
                     App.groupList = userLogIn.type.group.Select(s => Group.QueriedToGroup(s)).ToList();
                     App.contacts = userLogIn.type.member.Select(s => UserLogIn.QueriedToMember(s)).ToList();
+                    try
+                    {
+                        App.notifs.indNotifs = Notifs.QueriedToNotifs(userLogIn.type.indNotifs);
+                        App.notifs.groupNotifs = Notifs.QueriedToNotifs(userLogIn.type.groupNotifs);
+                    }
+                    catch { }
+                    try
+                    {
+                        App.justAdded = userLogIn.type.justAdded;
+                    }
+                    catch { }
                     if (App.typeError == 1)
                     {
                         await DisplayAlert("Wrong Password", "Retry entering password", "Ok");

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Transfyr.PersonalInformationPage"
@@ -27,29 +27,18 @@
                            AbsoluteLayout.LayoutBounds="0,0,0.3,0.03"/>
         <Image x:Name="personalImage"
                Aspect="AspectFit"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
                BackgroundColor="White"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0,0.03797,0.3,0.21">
-            <!--<Image.Source>
+            <Image.Source>
                 <UriImageSource Uri="{Binding item.personalImageLocation_bc}"/>
-            </Image.Source>-->
+            </Image.Source>
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped = "changePhoto" CommandParameter="personal"/>
             </Image.GestureRecognizers>
         </Image>
-        <BoxView x:Name="personalImageBoxView"
-                 BackgroundColor="Transparent"
-                 Margin="0,0,0,0"
-                 HorizontalOptions="FillAndExpand"
-                 VerticalOptions="FillAndExpand"
-                 AbsoluteLayout.LayoutFlags="All"
-                 AbsoluteLayout.LayoutBounds="0,0.03797,0.3,0.21">
-            <BoxView.GestureRecognizers>
-                <TapGestureRecognizer Tapped = "changePhoto" CommandParameter="personal"/>
-            </BoxView.GestureRecognizers>
-        </BoxView>
         <Forms9Patch:Label Text="Prefix:    "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
@@ -192,15 +181,15 @@
                            AbsoluteLayout.LayoutBounds="1,0.3041,0.3,0.03"/>
         <Image x:Name="companyImage"
                Aspect="AspectFit"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
                BackgroundColor="White"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.3571,0.3,0.09">
-            <!--<Image.Source>
+            <Image.Source>
                 <UriImageSource Uri="{Binding item.companyImageLocation_bc}"
                                 CachingEnabled="false"/>
-            </Image.Source>-->
+            </Image.Source>
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped = "changePhoto" CommandParameter="company"/>
             </Image.GestureRecognizers>

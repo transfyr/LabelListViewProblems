@@ -96,6 +96,9 @@ namespace Transfyr.Model.Queries
         public string s3_access_key { get; set; }
         public string s3_secret_access_key { get; set; }
         public string s3_session_token { get; set; }
+        public IList<string> indNotifs { get; set; }
+        public IList<string> groupNotifs { get; set; }
+        public string justAdded { get; set; }
     }
 
 }
