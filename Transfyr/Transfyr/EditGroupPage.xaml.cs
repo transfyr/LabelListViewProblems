@@ -98,14 +98,11 @@ namespace Transfyr
                     var emailMessenger = CrossMessaging.Current.EmailMessenger;
                     if (emailMessenger.CanSendEmail)
                     {
-
-                        var email = new EmailMessageBuilder().Subject("Transfyr QR Image from " + group.groupName).Body(Constants.QR_IMAGE_API + App.user.userId + group.groupId).To(App.user.userId).Build();
-
+                        var email = new EmailMessageBuilder().Subject("Transfyr QR Image from " + group.groupName).Body(Constants.QR_IMAGE_API + App.user.userId + group.groupId).To(App.user.userEmail).Build();
                         emailMessenger.SendEmail(email);
                     }
                 })
             };
-
             return tap;
         }
 

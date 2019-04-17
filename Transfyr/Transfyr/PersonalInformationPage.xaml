@@ -361,7 +361,7 @@
                HorizontalTextAlignment="Start"
                BackgroundColor="White"
                TextColor="Black"
-               Placeholder="Enter Country"
+               Placeholder="Enter Phone Number"
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.6861,0.31,0.06"/>
@@ -391,7 +391,7 @@
                HorizontalTextAlignment="Start"
                BackgroundColor="White"
                TextColor="Black"
-               Placeholder="Enter Email"
+               Placeholder="Enter LinkedIn"
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0.2753,0.8138,0.31,0.06"/>

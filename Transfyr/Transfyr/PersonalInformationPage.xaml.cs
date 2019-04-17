@@ -20,7 +20,7 @@ namespace Transfyr
 	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PersonalInformationPage : ContentPage
     {
-        public static User user = App.user;
+        public static User user;
 
         public SelectableUserWrapper<User> contactInformation;
 
@@ -32,6 +32,7 @@ namespace Transfyr
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            user = oldUser();
             //await Functions.refreshUserInfoAsync(); 
             //set all values in the page
             obtainContactInformation();
@@ -44,14 +45,36 @@ namespace Transfyr
             //    // personalImage.Source = ImageSource.FromUri(uri);
             //}
             //catch { }
-            //try
-            //{
-            //    var companyImageSource = await ImageService.Instance.LoadUrl(App.user.companyImageLocation_bc).DownSample(width: 1000, allowUpscale: true).AsJPGStreamAsync(quality: 80);
-            //    companyImage.Source = ImageSource.FromStream(() => companyImageSource);
-            //    // Uri uri2 = new Uri(App.user.companyImageLocation_bc);
-            //    // companyImage.Source = ImageSource.FromUri(uri2);
-            //}
-            //catch { }
+        }
+
+        public User oldUser()
+        {
+            User userA = new User()
+            {
+                userId = App.user.userId,
+                userEmail = App.user.userEmail,
+                userPassword = App.user.userPassword,
+                prefix_bc = App.user.prefix_bc,
+                firstName_bc = App.user.firstName_bc,
+                lastName_bc = App.user.lastName_bc,
+                suffix_bc = App.user.suffix_bc,
+                personalImageLocation_bc = App.user.personalImageLocation_bc,
+                personalPhoneNumber_bc = App.user.personalPhoneNumber_bc,
+                personalWebsite_bc = App.user.personalWebsite_bc,
+                linkedin_bc = App.user.linkedin_bc,
+                personalFax_bc = App.user.personalFax_bc,
+                jobTitle_bc = App.user.jobTitle_bc,
+                company_bc = App.user.company_bc,
+                companyImageLocation_bc = App.user.companyImageLocation_bc,
+                companyCity_bc = App.user.companyCity_bc,
+                companyState_bc = App.user.companyState_bc,
+                companyCountry_bc = App.user.companyCountry_bc,
+                companyWebsite_bc = App.user.companyWebsite_bc,
+                personalMessage = App.user.personalMessage,
+                twitter_bc = App.user.twitter_bc,
+                permission_access = App.user.permission_access
+            };
+            return userA;
         }
 
         protected internal async void changePhoto(object sender, System.EventArgs e)
@@ -164,7 +187,7 @@ namespace Transfyr
                 companyImage.Source = ImageSource.FromStream(() => imageStream);
                 await DisplayAlert("Success", "Company Picture Saved!", "Ok");
             }
-
+            mainAbsoluteLayout.Children.Remove(boxv);
             await Navigation.PushAsync(new HomePage(3));
             return;
         }
@@ -240,6 +263,7 @@ namespace Transfyr
             if (_userInfo.Length == 0)
             {
                 await DisplayAlert("Success", "Business Card Saved!", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
                 await Navigation.PushAsync(new HomePage(3));
                 return;
             }
@@ -258,6 +282,7 @@ namespace Transfyr
                 return;
             }
             await DisplayAlert("Success", "Business Card Saved!", "Ok");
+            mainAbsoluteLayout.Children.Remove(boxv);
             await Navigation.PushAsync(new HomePage(3));//(new PersonalPage());
             return;
         }

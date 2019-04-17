@@ -28,6 +28,12 @@ namespace Transfyr.Model
 
         public static Group QueriedToGroup(IList<object> queriedGroup)
         {
+            //string[0,1,2,4] groupStrings;
+            if (string.IsNullOrWhiteSpace((string)queriedGroup[0])) { queriedGroup[0] = ""; }
+            if (string.IsNullOrWhiteSpace((string)queriedGroup[1])) { queriedGroup[1] = ""; }
+            if (string.IsNullOrWhiteSpace((string)queriedGroup[2])) { queriedGroup[2] = ""; }
+            if (string.IsNullOrWhiteSpace((string)queriedGroup[4])) { queriedGroup[4] = ""; }
+
             //change the queried IList to the Group class
             Group group = new Group()
             {

@@ -41,7 +41,7 @@ namespace Transfyr
             AbsoluteLayout.SetLayoutBounds(image1, new Rectangle(0, 0, 1, 1));
             Image image2 = new Image
             {
-                Source = ImageSource.FromResource("TransfyrApp0.Assets.Images.blackEmailPic.png", assembly),
+                Source = ImageSource.FromResource("Transfyr.Assets.Images.blackEmailPic.png", assembly),
                 Aspect = Aspect.AspectFit
             };
             image2.GestureRecognizers.Add(sendEmail());
@@ -169,7 +169,7 @@ namespace Transfyr
                     if (emailMessenger.CanSendEmail)
                     {
 
-                        var email = new EmailMessageBuilder().Subject("Transfyr Personal QR Image for " + Functions.getFullName(App.user)).Body(Constants.QR_IMAGE_API + App.user.userId).To(App.user.userId).Build();
+                        var email = new EmailMessageBuilder().Subject("Transfyr Personal QR Image for " + Functions.getFullName(App.user)).Body(Constants.QR_IMAGE_API + App.user.userId).To(App.user.userEmail).Build();
 
                         emailMessenger.SendEmail(email);
                     }
