@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Transfyr.GroupPage"
@@ -69,6 +69,8 @@
                                     </Forms9Patch:Label>
                                     <Image x:Name="emailImage"
                                            Source="{Binding darkBlueEmailImage}"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
                                            BackgroundColor="Black" 
                                            Grid.Row="0" Grid.Column="1">
                                         <Image.GestureRecognizers>
@@ -133,7 +135,8 @@
                                                                 <Image BackgroundColor="Black"
                                                                        WidthRequest="{Binding memberWidth}"
                                                                        Source="{Binding personalImageLocation_bc}"
-                                                                       HorizontalOptions="CenterAndExpand"
+                                                                       HorizontalOptions="FillAndExpand"
+                                                                       VerticalOptions="FillAndExpand"
                                                                        Aspect="AspectFit"
                                                                        Grid.Row="0" Grid.Column="0">
                                                                     <Image.GestureRecognizers>

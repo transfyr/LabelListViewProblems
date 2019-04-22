@@ -15,7 +15,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -49,11 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Auth0.OidcClient.Android">
-      <Version>2.3.1</Version>
-    </PackageReference>
     <PackageReference Include="AWSSDK.S3">
-      <Version>3.3.101.3</Version>
+      <Version>3.3.101.5</Version>
     </PackageReference>
     <PackageReference Include="Forms9Patch">
       <Version>1.6.7.2</Version>
@@ -63,9 +60,6 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Plugin.Permissions">
-      <Version>3.0.0.12</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.5.231</Version>
@@ -88,7 +82,6 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.4.859</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
@@ -99,6 +92,15 @@
     </PackageReference>
     <PackageReference Include="ZXing.Net.Mobile.Forms">
       <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Auth0.OidcClient.Android">
+      <Version>2.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.6.0.344457</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>3.0.0.12</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +143,15 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Transfyr_Icon_Android.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "16b2fedde8f7504ba47e68fa5e2627f2f12449ff"
+    "signature": "c90061825c5993b49e8e66e772b7e5f781a9132a"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Transfyr/1.0.0": {
         "dependencies": {
-          "AWSSDK.S3": "3.3.101.3",
+          "AWSSDK.S3": "3.3.101.5",
           "Forms9Patch": "1.6.7.2",
           "Microsoft.CSharp": "4.5.0",
           "NETStandard.Library": "2.0.3",
@@ -21,7 +21,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -30,22 +30,22 @@
           "Transfyr.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.100.5": {
+      "AWSSDK.Core/3.3.100.7": {
         "runtime": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.100.5"
+            "fileVersion": "3.3.100.7"
           }
         }
       },
-      "AWSSDK.S3/3.3.101.3": {
+      "AWSSDK.S3/3.3.101.5": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.100.5"
+          "AWSSDK.Core": "3.3.100.7"
         },
         "runtime": {
           "lib/netstandard2.0/AWSSDK.S3.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.101.3"
+            "fileVersion": "3.3.101.5"
           }
         }
       },
@@ -55,7 +55,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "SkiaSharp.Svg": "1.59.1",
           "SkiaSharp.Views.Forms": "1.59.3",
-          "Xamarin.Forms": "3.6.0.293080"
+          "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "lib/netstandard1.0/Forms9Patch.dll": {
@@ -109,7 +109,7 @@
       },
       "Rg.Plugins.Popup/1.1.5.188": {
         "dependencies": {
-          "Xamarin.Forms": "3.6.0.293080"
+          "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "lib/netstandard1.0/Rg.Plugins.Popup.dll": {
@@ -188,7 +188,7 @@
       "SkiaSharp.Views.Forms/1.59.3": {
         "dependencies": {
           "SkiaSharp": "1.59.3",
-          "Xamarin.Forms": "3.6.0.293080"
+          "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "lib/netstandard1.3/SkiaSharp.Views.Forms.dll": {
@@ -715,7 +715,7 @@
       "Xamarin.FFImageLoading.Forms/2.4.4.859": {
         "dependencies": {
           "Xamarin.FFImageLoading": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080"
+          "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "lib/netstandard1.0/FFImageLoading.Forms.dll": {
@@ -724,7 +724,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -758,7 +758,7 @@
       },
       "ZXing.Net.Mobile.Forms/2.4.1": {
         "dependencies": {
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1"
         },
         "runtime": {
@@ -776,19 +776,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AWSSDK.Core/3.3.100.5": {
+    "AWSSDK.Core/3.3.100.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fAShnrXCjIXJpGAtPzQ7raXMJbiyfXJg4MtYmFqNl2Kt/NpxPxsCaanI7h0Dx5a14XxYmwHjhpU3Hw2bDXUOEw==",
-      "path": "awssdk.core/3.3.100.5",
-      "hashPath": "awssdk.core.3.3.100.5.nupkg.sha512"
+      "sha512": "sha512-l4G+om4k0l5lqOIK1lPhUROT+4ui4mS7v9e7daPW4aj7BCQYQsgQCtfxfrDIQzTiAubIGYwRBVEkrgEvZng81w==",
+      "path": "awssdk.core/3.3.100.7",
+      "hashPath": "awssdk.core.3.3.100.7.nupkg.sha512"
     },
-    "AWSSDK.S3/3.3.101.3": {
+    "AWSSDK.S3/3.3.101.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ukTakjKfUwFP8fdcQAQ1fGsGCKoKSG3OogEb8dTudYDKPXqzwcypCapl7fTv3sdL+N5fKmjCp29mfx3XRPFAOw==",
-      "path": "awssdk.s3/3.3.101.3",
-      "hashPath": "awssdk.s3.3.3.101.3.nupkg.sha512"
+      "sha512": "sha512-v+vvaQWyDWH5lzU6aGuFpMZwHeu5Rwwg18GweRYm6ykRImxFEeCm0IedIspW6Js0FhO3s4B7go8R5G9mFb/j4Q==",
+      "path": "awssdk.s3/3.3.101.5",
+      "hashPath": "awssdk.s3.3.3.101.5.nupkg.sha512"
     },
     "Forms9Patch/1.6.7.2": {
       "type": "package",
@@ -1273,12 +1273,12 @@
       "path": "xamarin.ffimageloading.forms/2.4.4.859",
       "hashPath": "xamarin.ffimageloading.forms.2.4.4.859.nupkg.sha512"
     },
-    "Xamarin.Forms/3.6.0.293080": {
+    "Xamarin.Forms/3.6.0.344457": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
-      "path": "xamarin.forms/3.6.0.293080",
-      "hashPath": "xamarin.forms.3.6.0.293080.nupkg.sha512"
+      "sha512": "sha512-YTPYiRg5q8Q1AgkjX9mx2/0wfCNyoSfztvvWw9HY4qM1lmOgkAxAbbtY8zi3fCPUXhfZrCAgRvJYNS8VM519kQ==",
+      "path": "xamarin.forms/3.6.0.344457",
+      "hashPath": "xamarin.forms.3.6.0.344457.nupkg.sha512"
     },
     "ZXing.Net.Mobile/2.4.1": {
       "type": "package",

@@ -24,7 +24,6 @@ C:/Users/mdf30/OneDrive/Desktop/Transfyr/AppCode/Transfyr04062019/Transfyr/Trans
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.deps.json
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.pdb
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/obj/Debug/netstandard2.0/Transfyr.csprojAssemblyReference.cache
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/obj/Debug/netstandard2.0/AddNewGroupPage.xaml.g.cs
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/obj/Debug/netstandard2.0/ContactPage.xaml.g.cs

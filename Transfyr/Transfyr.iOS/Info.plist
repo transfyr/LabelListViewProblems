@@ -64,5 +64,9 @@
 	<string>Transfyr needs to access your Media Library</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Transfyr needs to access your Camera</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage-1.launchimage</string>
 </dict>
 </plist>

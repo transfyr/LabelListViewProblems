@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Transfyr.EditGroupPage"
@@ -104,8 +104,8 @@
                                                 <Image Source="{Binding item.personalImageLocation_bc}"
                                                        Grid.Column="0"
                                                        Aspect="AspectFit"
-                                                       HorizontalOptions="Center"
-                                                       VerticalOptions="CenterAndExpand"/>
+                                                       HorizontalOptions="FillAndExpand"
+                                                       VerticalOptions="FillAndExpand"/>
                                                 <Forms9Patch:Label Text="{Binding fullName}"
                                                        Grid.Column="2" 
                                                        Fit="Width" Lines="1"

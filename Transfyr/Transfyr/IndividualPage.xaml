@@ -60,8 +60,8 @@
                                     <Image Source="{Binding item.personalImageLocation_bc}"
                                            Grid.Row="0" Grid.Column="0"
                                            Grid.RowSpan="4" Aspect="AspectFit" 
-                                           HorizontalOptions="CenterAndExpand" 
-                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
                                            BackgroundColor="White">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding contactPageCommand}"
@@ -99,8 +99,8 @@
                                     <Image Source="{Binding item.companyImageLocation_bc}"
                                            Grid.Row="1" Grid.Column="3"
                                            Grid.RowSpan="2" Aspect="AspectFit" 
-                                           HorizontalOptions="CenterAndExpand" 
-                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
                                            BackgroundColor="Transparent"/>
                                     <Forms9Patch:Label x:Name="personalMessageLabel" 
                                            Text="{Binding item.personalMessage}"

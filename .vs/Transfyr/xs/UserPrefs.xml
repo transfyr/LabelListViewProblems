@@ -1,34 +1,37 @@
 ﻿<Properties StartupConfiguration="{4FC36D53-691D-470B-80D5-1F39BFBA9D2D}|Default">
-  <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
-  <MonoDevelop.Ide.ItemProperties.Transfyr.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A0497141-6E46-483C-8BFD-89265CC9BBFC" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs">
+  <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.Transfyr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A0497141-6E46-483C-8BFD-89265CC9BBFC" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/InitialPage.xaml">
     <Files>
-      <File FileName="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs" Line="111" Column="14" />
-      <File FileName="Transfyr/Transfyr/EditGroupPage.xaml.cs" Line="102" Column="1" />
-      <File FileName="Transfyr/Transfyr/Model/MultiSelectViewModelClass.cs" Line="226" Column="16" />
-      <File FileName="Transfyr/Transfyr/Model/User.cs" Line="82" Column="1" />
-      <File FileName="Transfyr/Transfyr.iOS/Auth0Interface_iOS.cs" Line="48" Column="1" />
-      <File FileName="Transfyr/Transfyr/Helpers/Functions.cs" Line="163" Column="54" />
-      <File FileName="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" Line="47" Column="24" />
-      <File FileName="Transfyr/Transfyr/PersonalInformationPage.xaml" />
-      <File FileName="Transfyr/Transfyr/Model/Queries/userLogIn.cs" Line="22" Column="47" />
-      <File FileName="Transfyr/Transfyr/PersonalPage.xaml.cs" Line="83" Column="1" />
+      <File FileName="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs" Line="116" Column="46" />
+      <File FileName="Transfyr/Transfyr.Android/Resources/Resource.designer.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/Model/MultiSelectViewModelClass.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr.iOS/Auth0Interface_iOS.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/Helpers/Functions.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/PersonalPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr.iOS/Info.plist" />
+      <File FileName="Transfyr/Transfyr.Android/Resources/values/styles.xml" Line="28" Column="25" />
+      <File FileName="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" Line="17" Column="12" />
+      <File FileName="Transfyr/Transfyr.Android/MainActivity.cs" Line="16" Column="34" />
+      <File FileName="../../.nuget/packages/plugin.permissions/3.0.0.12/readme.txt" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/PersonalPage.xaml" />
+      <File FileName="Transfyr/Transfyr/InitialPage.xaml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Transfyr" expanded="True">
             <Node name="Transfyr" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="Images" expanded="True" />
-              </Node>
-              <Node name="EditGroupPage.xaml" expanded="True" />
+              <Node name="AddNewGroupPage.xaml" expanded="True" />
+              <Node name="ContactPage.xaml" expanded="True" />
+              <Node name="InitialPage.xaml" selected="True" />
               <Node name="PersonalPage.xaml" expanded="True" />
             </Node>
-            <Node name="Transfyr.Android" expanded="True" selected="True">
-              <Node name="SourceCode" expanded="True" />
+            <Node name="Transfyr.Android" expanded="True">
+              <Node name="SourceCode" expanded="True">
+                <Node name="XCropImage" expanded="True" />
+              </Node>
             </Node>
-            <Node name="Transfyr.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>

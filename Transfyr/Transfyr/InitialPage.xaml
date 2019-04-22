@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
@@ -12,7 +12,7 @@
                         HeightRequest="50000">
         <Image x:Name="iconImage"
                    BackgroundColor="Transparent"
-                   Aspect="AspectFit"
+                   Aspect="AspectFit" 
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="FillAndExpand"
                    AbsoluteLayout.LayoutFlags="All"
@@ -42,6 +42,7 @@
                          Grid.Row="0" Grid.Column="2"/>
             <Image x:Name="LinkedInImage"
                        Aspect="AspectFit" 
+                       HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        Margin="0,0,0,0"
                        BackgroundColor="Transparent"

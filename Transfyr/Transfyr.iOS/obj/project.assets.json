@@ -26,7 +26,7 @@
           "lib/Xamarin.iOS10/Auth0.OidcClient.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.100.5": {
+      "AWSSDK.Core/3.3.100.7": {
         "type": "package",
         "dependencies": {
           "PCLCrypto": "1.0.2.15130",
@@ -39,10 +39,10 @@
           "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.3.101.3": {
+      "AWSSDK.S3/3.3.101.5": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.100.5, 3.4.0)"
+          "AWSSDK.Core": "[3.3.100.7, 3.4.0)"
         },
         "compile": {
           "lib/Xamarin.iOS10/AWSSDK.S3.dll": {}
@@ -1028,7 +1028,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1183,7 +1183,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AWSSDK.S3": "3.3.101.3",
+          "AWSSDK.S3": "3.3.101.5",
           "Forms9Patch": "1.6.7.2",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "12.0.1",
@@ -1194,7 +1194,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -1232,7 +1232,7 @@
           "lib/Xamarin.iOS10/Auth0.OidcClient.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.100.5": {
+      "AWSSDK.Core/3.3.100.7": {
         "type": "package",
         "dependencies": {
           "PCLCrypto": "1.0.2.15130",
@@ -1245,10 +1245,10 @@
           "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.3.101.3": {
+      "AWSSDK.S3/3.3.101.5": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.100.5, 3.4.0)"
+          "AWSSDK.Core": "[3.3.100.7, 3.4.0)"
         },
         "compile": {
           "lib/Xamarin.iOS10/AWSSDK.S3.dll": {}
@@ -2156,7 +2156,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2311,7 +2311,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AWSSDK.S3": "3.3.101.3",
+          "AWSSDK.S3": "3.3.101.5",
           "Forms9Patch": "1.6.7.2",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "12.0.1",
@@ -2322,7 +2322,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -2360,7 +2360,7 @@
           "lib/Xamarin.iOS10/Auth0.OidcClient.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.100.5": {
+      "AWSSDK.Core/3.3.100.7": {
         "type": "package",
         "dependencies": {
           "PCLCrypto": "1.0.2.15130",
@@ -2373,10 +2373,10 @@
           "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.3.101.3": {
+      "AWSSDK.S3/3.3.101.5": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.100.5, 3.4.0)"
+          "AWSSDK.Core": "[3.3.100.7, 3.4.0)"
         },
         "compile": {
           "lib/Xamarin.iOS10/AWSSDK.S3.dll": {}
@@ -3284,7 +3284,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -3439,7 +3439,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AWSSDK.S3": "3.3.101.3",
+          "AWSSDK.S3": "3.3.101.5",
           "Forms9Patch": "1.6.7.2",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "12.0.1",
@@ -3450,7 +3450,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -3488,7 +3488,7 @@
           "lib/Xamarin.iOS10/Auth0.OidcClient.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.100.5": {
+      "AWSSDK.Core/3.3.100.7": {
         "type": "package",
         "dependencies": {
           "PCLCrypto": "1.0.2.15130",
@@ -3501,10 +3501,10 @@
           "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.3.101.3": {
+      "AWSSDK.S3/3.3.101.5": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.100.5, 3.4.0)"
+          "AWSSDK.Core": "[3.3.100.7, 3.4.0)"
         },
         "compile": {
           "lib/Xamarin.iOS10/AWSSDK.S3.dll": {}
@@ -4412,7 +4412,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -4567,7 +4567,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AWSSDK.S3": "3.3.101.3",
+          "AWSSDK.S3": "3.3.101.5",
           "Forms9Patch": "1.6.7.2",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "12.0.1",
@@ -4578,7 +4578,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.FFImageLoading.Forms": "2.4.4.859",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -4621,13 +4621,13 @@
         "lib/Xamarin.iOS10/Auth0.OidcClient.xml"
       ]
     },
-    "AWSSDK.Core/3.3.100.5": {
-      "sha512": "fAShnrXCjIXJpGAtPzQ7raXMJbiyfXJg4MtYmFqNl2Kt/NpxPxsCaanI7h0Dx5a14XxYmwHjhpU3Hw2bDXUOEw==",
+    "AWSSDK.Core/3.3.100.7": {
+      "sha512": "l4G+om4k0l5lqOIK1lPhUROT+4ui4mS7v9e7daPW4aj7BCQYQsgQCtfxfrDIQzTiAubIGYwRBVEkrgEvZng81w==",
       "type": "package",
-      "path": "awssdk.core/3.3.100.5",
+      "path": "awssdk.core/3.3.100.7",
       "files": [
         ".signature.p7s",
-        "awssdk.core.3.3.100.5.nupkg.sha512",
+        "awssdk.core.3.3.100.7.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/MonoAndroid10/AWSSDK.Core.XML",
         "lib/MonoAndroid10/AWSSDK.Core.dll",
@@ -4668,14 +4668,14 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.S3/3.3.101.3": {
-      "sha512": "ukTakjKfUwFP8fdcQAQ1fGsGCKoKSG3OogEb8dTudYDKPXqzwcypCapl7fTv3sdL+N5fKmjCp29mfx3XRPFAOw==",
+    "AWSSDK.S3/3.3.101.5": {
+      "sha512": "v+vvaQWyDWH5lzU6aGuFpMZwHeu5Rwwg18GweRYm6ykRImxFEeCm0IedIspW6Js0FhO3s4B7go8R5G9mFb/j4Q==",
       "type": "package",
-      "path": "awssdk.s3/3.3.101.3",
+      "path": "awssdk.s3/3.3.101.5",
       "files": [
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
-        "awssdk.s3.3.3.101.3.nupkg.sha512",
+        "awssdk.s3.3.3.101.5.nupkg.sha512",
         "awssdk.s3.nuspec",
         "lib/MonoAndroid10/AWSSDK.S3.XML",
         "lib/MonoAndroid10/AWSSDK.S3.dll",
@@ -8310,10 +8310,10 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.293080": {
-      "sha512": "o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
+    "Xamarin.Forms/3.6.0.344457": {
+      "sha512": "YTPYiRg5q8Q1AgkjX9mx2/0wfCNyoSfztvvWw9HY4qM1lmOgkAxAbbtY8zi3fCPUXhfZrCAgRvJYNS8VM519kQ==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.293080",
+      "path": "xamarin.forms/3.6.0.344457",
       "files": [
         ".signature.p7s",
         "build/MonoAndroid10/proguard.cfg",
@@ -8470,7 +8470,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.293080.nupkg.sha512",
+        "xamarin.forms.3.6.0.344457.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -8524,7 +8524,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "AWSSDK.S3 >= 3.3.101.3",
+      "AWSSDK.S3 >= 3.3.101.5",
       "Auth0.OidcClient.iOS >= 2.3.1",
       "Forms9Patch >= 1.6.7.2",
       "Microsoft.CSharp >= 4.5.0",
@@ -8538,7 +8538,7 @@
       "Xam.Plugin.Media >= 4.0.1.5",
       "Xam.Plugins.Messaging >= 5.2.0",
       "Xamarin.FFImageLoading.Forms >= 2.4.4.859",
-      "Xamarin.Forms >= 3.6.0.293080",
+      "Xamarin.Forms >= 3.6.0.344457",
       "ZXing.Net.Mobile >= 2.4.1",
       "ZXing.Net.Mobile.Forms >= 2.4.1",
       "sqlite-net-pcl >= 1.5.231"
@@ -8581,7 +8581,7 @@
         "dependencies": {
           "AWSSDK.S3": {
             "target": "Package",
-            "version": "[3.3.101.3, )"
+            "version": "[3.3.101.5, )"
           },
           "Auth0.OidcClient.iOS": {
             "target": "Package",
@@ -8633,7 +8633,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.293080, )"
+            "version": "[3.6.0.344457, )"
           },
           "ZXing.Net.Mobile": {
             "target": "Package",
