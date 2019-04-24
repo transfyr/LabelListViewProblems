@@ -113,24 +113,24 @@ namespace Transfyr.Droid.SourceCode.XCropImage
             Window.AddFlags(WindowManagerFlags.Fullscreen);
 
 
-            FindViewById<Button>(Resource.Id.discard).Click += (sender, e) => { OnDisCardClick(); };
-            FindViewById<Button>(Resource.Id.save).Click += (sender, e) => { OnSaveClicked(); };
+            //FindViewById<Button>(Resource.Id.discard).Click += (sender, e) => { OnDisCardClick(); };
+            //FindViewById<Button>(Resource.Id.save).Click += (sender, e) => { OnSaveClicked(); };
 
-            FindViewById<Button>(Resource.Id.rotateLeft).Click += (o, e) =>
-            {
-                _bitmap = Util.RotateImage(_bitmap, -90);
-                var rotateBitmap = new RotateBitmap(_bitmap);
-                _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
-                AddHighlightView();
-            };
+            //FindViewById<Button>(Resource.Id.rotateLeft).Click += (o, e) =>
+            //{
+            //    _bitmap = Util.RotateImage(_bitmap, -90);
+            //    var rotateBitmap = new RotateBitmap(_bitmap);
+            //    _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
+            //    AddHighlightView();
+            //};
 
-            FindViewById<Button>(Resource.Id.rotateRight).Click += (o, e) =>
-            {
-                _bitmap = Util.RotateImage(_bitmap, 90);
-                var rotateBitmap = new RotateBitmap(_bitmap);
-                _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
-                AddHighlightView();
-            };
+            //FindViewById<Button>(Resource.Id.rotateRight).Click += (o, e) =>
+            //{
+            //    _bitmap = Util.RotateImage(_bitmap, 90);
+            //    var rotateBitmap = new RotateBitmap(_bitmap);
+            //    _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
+            //    AddHighlightView();
+            //};
 
             _imageView.SetImageBitmapResetBase(_bitmap, true);
             AddHighlightView();

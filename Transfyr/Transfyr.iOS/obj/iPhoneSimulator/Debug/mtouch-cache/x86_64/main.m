@@ -17,10 +17,6 @@ void xamarin_register_assemblies_impl ()
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Plugin.Media.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
-	xamarin_open_and_register ("FFImageLoading.Platform.dll", &exception_gchandle);
-	xamarin_process_managed_exception_gchandle (exception_gchandle);
-	xamarin_open_and_register ("WebP.Touch.dll", &exception_gchandle);
-	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Auth0.OidcClient.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("TOCropBinding.dll", &exception_gchandle);
@@ -46,7 +42,7 @@ void xamarin_setup_impl ()
 	xamarin_init_mono_debug = TRUE;
 	xamarin_executable_name = "Transfyr.iOS.exe";
 	mono_use_llvm = FALSE;
-	xamarin_log_level = 0;
+	xamarin_log_level = 2;
 	xamarin_arch_name = "x86_64";
 	xamarin_marshal_objectivec_exception_mode = MarshalObjectiveCExceptionModeUnwindManagedCode;
 	xamarin_debug_mode = TRUE;

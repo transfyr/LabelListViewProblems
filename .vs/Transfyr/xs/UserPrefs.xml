@@ -1,35 +1,27 @@
 ﻿<Properties StartupConfiguration="{4FC36D53-691D-470B-80D5-1F39BFBA9D2D}|Default">
   <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
   <MonoDevelop.Ide.ItemProperties.Transfyr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A0497141-6E46-483C-8BFD-89265CC9BBFC" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/InitialPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/InitialPage.xaml.cs">
     <Files>
-      <File FileName="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs" Line="116" Column="46" />
-      <File FileName="Transfyr/Transfyr.Android/Resources/Resource.designer.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr.Android/SourceCode/XCropImage/CropImage.cs" Line="109" Column="48" />
       <File FileName="Transfyr/Transfyr/Model/MultiSelectViewModelClass.cs" Line="1" Column="1" />
       <File FileName="Transfyr/Transfyr.iOS/Auth0Interface_iOS.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" Line="17" Column="1" />
       <File FileName="Transfyr/Transfyr/Helpers/Functions.cs" Line="1" Column="1" />
       <File FileName="Transfyr/Transfyr/PersonalPage.xaml.cs" Line="1" Column="1" />
       <File FileName="Transfyr/Transfyr.iOS/Info.plist" />
-      <File FileName="Transfyr/Transfyr.Android/Resources/values/styles.xml" Line="28" Column="25" />
-      <File FileName="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" Line="17" Column="12" />
-      <File FileName="Transfyr/Transfyr.Android/MainActivity.cs" Line="16" Column="34" />
       <File FileName="../../.nuget/packages/plugin.permissions/3.0.0.12/readme.txt" Line="1" Column="1" />
-      <File FileName="Transfyr/Transfyr/PersonalPage.xaml" />
-      <File FileName="Transfyr/Transfyr/InitialPage.xaml" />
+      <File FileName="Transfyr/Transfyr/Auth0Interface.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/InitialPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Transfyr" expanded="True">
             <Node name="Transfyr" expanded="True">
-              <Node name="AddNewGroupPage.xaml" expanded="True" />
-              <Node name="ContactPage.xaml" expanded="True" />
-              <Node name="InitialPage.xaml" selected="True" />
-              <Node name="PersonalPage.xaml" expanded="True" />
-            </Node>
-            <Node name="Transfyr.Android" expanded="True">
-              <Node name="SourceCode" expanded="True">
-                <Node name="XCropImage" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="InitialPage.xaml" expanded="True">
+                <Node name="InitialPage.xaml.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -45,6 +37,9 @@
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="110" column="1" />
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="117" column="1" />
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="119" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="29" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="35" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="36" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
