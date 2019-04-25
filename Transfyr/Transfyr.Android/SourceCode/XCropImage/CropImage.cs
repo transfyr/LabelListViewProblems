@@ -112,6 +112,24 @@ namespace Transfyr.Droid.SourceCode.XCropImage
 
             Window.AddFlags(WindowManagerFlags.Fullscreen);
 
+            FindViewById<Button>(2131230826).Click += (sender, e) => { OnDisCardClick(); };
+            FindViewById<Button>(2131230825).Click += (sender, e) => { OnSaveClicked(); };
+
+            FindViewById<Button>(2131230827).Click += (o, e) =>
+            {
+                _bitmap = Util.RotateImage(_bitmap, -90);
+                var rotateBitmap = new RotateBitmap(_bitmap);
+                _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
+                AddHighlightView();
+            };
+
+            FindViewById<Button>(2131230828).Click += (o, e) =>
+            {
+                _bitmap = Util.RotateImage(_bitmap, 90);
+                var rotateBitmap = new RotateBitmap(_bitmap);
+                _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
+                AddHighlightView();
+            };
 
             //FindViewById<Button>(Resource.Id.discard).Click += (sender, e) => { OnDisCardClick(); };
             //FindViewById<Button>(Resource.Id.save).Click += (sender, e) => { OnSaveClicked(); };
