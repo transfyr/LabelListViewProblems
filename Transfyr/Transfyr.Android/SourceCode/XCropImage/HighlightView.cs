@@ -295,8 +295,8 @@ namespace Transfyr.Droid.SourceCode.XCropImage
             _resizeDrawableWidth = resources.GetDrawable(Resource.Drawable.camera_crop_width);
             _resizeDrawableHeight = resources.GetDrawable(Resource.Drawable.camera_crop_height);*/
 
-            _resizeDrawableWidth = ContextCompat.GetDrawable(CrossCurrentActivity.Current.Activity, 2130837580);
-            _resizeDrawableHeight = ContextCompat.GetDrawable(CrossCurrentActivity.Current.Activity, 2130837579);
+            _resizeDrawableWidth = ContextCompat.GetDrawable(CrossCurrentActivity.Current.Activity, Resource.Drawable.camera_crop_width);
+            _resizeDrawableHeight = ContextCompat.GetDrawable(CrossCurrentActivity.Current.Activity, Resource.Drawable.camera_crop_height);
         }
 
         // Grows the cropping rectange by (dx, dy) in image space.

@@ -66,6 +66,10 @@
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable-xxhdpi/transfyr_icon_android.png
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable-xhdpi/transfyr_icon_android.png
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable-hdpi/transfyr_icon_android.png
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/layout/cropimage.xml
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable/indicator_autocrop.png
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable/camera_crop_width.png
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/drawable/camera_crop_height.png
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/res/xml/file_paths.xml
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/R.cs.flag
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/R.txt

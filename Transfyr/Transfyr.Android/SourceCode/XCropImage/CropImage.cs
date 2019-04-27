@@ -69,7 +69,7 @@ namespace Transfyr.Droid.SourceCode.XCropImage
         {
             base.OnCreate(savedInstanceState);
             RequestWindowFeature(WindowFeatures.NoTitle);
-            SetContentView(2130903065); //SetContentView(Resource.Layout.cropimage);
+            SetContentView(Resource.Layout.cropimage);
 
             _imageView = FindViewById<CropImageView>(Resource.Id.image);
 
@@ -112,10 +112,11 @@ namespace Transfyr.Droid.SourceCode.XCropImage
 
             Window.AddFlags(WindowManagerFlags.Fullscreen);
 
-            FindViewById<Button>(2131230826).Click += (sender, e) => { OnDisCardClick(); };
-            FindViewById<Button>(2131230825).Click += (sender, e) => { OnSaveClicked(); };
 
-            FindViewById<Button>(2131230827).Click += (o, e) =>
+            FindViewById<Button>(Resource.Id.discard).Click += (sender, e) => { OnDisCardClick(); };
+            FindViewById<Button>(Resource.Id.save).Click += (sender, e) => { OnSaveClicked(); };
+
+            FindViewById<Button>(Resource.Id.rotateLeft).Click += (o, e) =>
             {
                 _bitmap = Util.RotateImage(_bitmap, -90);
                 var rotateBitmap = new RotateBitmap(_bitmap);
@@ -123,32 +124,13 @@ namespace Transfyr.Droid.SourceCode.XCropImage
                 AddHighlightView();
             };
 
-            FindViewById<Button>(2131230828).Click += (o, e) =>
+            FindViewById<Button>(Resource.Id.rotateRight).Click += (o, e) =>
             {
                 _bitmap = Util.RotateImage(_bitmap, 90);
                 var rotateBitmap = new RotateBitmap(_bitmap);
                 _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
                 AddHighlightView();
             };
-
-            //FindViewById<Button>(Resource.Id.discard).Click += (sender, e) => { OnDisCardClick(); };
-            //FindViewById<Button>(Resource.Id.save).Click += (sender, e) => { OnSaveClicked(); };
-
-            //FindViewById<Button>(Resource.Id.rotateLeft).Click += (o, e) =>
-            //{
-            //    _bitmap = Util.RotateImage(_bitmap, -90);
-            //    var rotateBitmap = new RotateBitmap(_bitmap);
-            //    _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
-            //    AddHighlightView();
-            //};
-
-            //FindViewById<Button>(Resource.Id.rotateRight).Click += (o, e) =>
-            //{
-            //    _bitmap = Util.RotateImage(_bitmap, 90);
-            //    var rotateBitmap = new RotateBitmap(_bitmap);
-            //    _imageView.SetImageRotateBitmapResetBase(rotateBitmap, true);
-            //    AddHighlightView();
-            //};
 
             _imageView.SetImageBitmapResetBase(_bitmap, true);
             AddHighlightView();

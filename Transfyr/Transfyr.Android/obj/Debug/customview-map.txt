@@ -22,6 +22,7 @@ android.support.v7.widget.Toolbar;/Users/transfyr/Documents/TransfyrApp/Transfyr
 android.support.v7.widget.Toolbar;obj/Debug/res/layout/toolbar.xml
 background;obj/Debug/res/mipmap-anydpi-v26/icon.xml
 background;obj/Debug/res/mipmap-anydpi-v26/icon_round.xml
+Button;obj/Debug/res/layout/cropimage.xml
 color;obj/Debug/res/values/colors.xml
 external-files-path;obj/Debug/res/xml/file_paths.xml
 foreground;obj/Debug/res/mipmap-anydpi-v26/icon.xml
@@ -29,9 +30,11 @@ foreground;obj/Debug/res/mipmap-anydpi-v26/icon_round.xml
 FrameLayout;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/75/jl/res/layout/bottomtablayout.xml
 FrameLayout;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/82/jl/res/layout/zxingscanneractivitylayout.xml
 FrameLayout;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/82/jl/res/layout/zxingscannerfragmentlayout.xml
+FrameLayout;obj/Debug/res/layout/cropimage.xml
 item;obj/Debug/res/values/styles.xml
 LinearLayout;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/75/jl/res/layout/bottomtablayout.xml
 paths;obj/Debug/res/xml/file_paths.xml
+RelativeLayout;obj/Debug/res/layout/cropimage.xml
 resources;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/1/jl/res/values/strings.xml
 resources;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/28/jl/res/values/strings.xml
 resources;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/30/jl/res/values/strings.xml
@@ -47,6 +50,7 @@ string;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug
 string;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/30/jl/res/values/strings.xml
 string;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/79/jl/res/values/strings.xml
 style;obj/Debug/res/values/styles.xml
+Transfyr.Droid.SourceCode.XCropImage.CropImageView;obj/Debug/res/layout/cropimage.xml
 translate;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/75/jl/res/anim/enterfromleft.xml
 translate;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/75/jl/res/anim/enterfromright.xml
 translate;/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/Debug/lp/75/jl/res/anim/exittoleft.xml

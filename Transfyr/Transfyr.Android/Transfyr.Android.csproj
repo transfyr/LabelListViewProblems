@@ -152,6 +152,10 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\Transfyr_Icon_Android.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Transfyr_Icon_Android.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Transfyr_Icon_Android.png" />
+    <AndroidResource Include="Resources\layout\cropimage.axml" />
+    <AndroidResource Include="Resources\drawable\indicator_autocrop.png" />
+    <AndroidResource Include="Resources\drawable\camera_crop_width.png" />
+    <AndroidResource Include="Resources\drawable\camera_crop_height.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
