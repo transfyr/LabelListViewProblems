@@ -53,9 +53,20 @@ namespace Transfyr
 
         async public void toAuth0LogIn(object sender, System.EventArgs e)
         {
+            //add a semi dark transparent layer to the screen, due to loading
+            BoxView boxv = new BoxView()
+            {
+                BackgroundColor = Color.DimGray,
+                Opacity = 0.5
+            };
+            AbsoluteLayout.SetLayoutFlags(boxv, AbsoluteLayoutFlags.All);
+            AbsoluteLayout.SetLayoutBounds(boxv, new Rectangle(0, 0, 1, 1));
+            mainAbsoluteLayout.Children.Add(boxv);
+
             Label labelClicked = (Label)sender;
             string loginType = labelClicked.Text;
             await DependencyService.Get<Auth0Interface>().Auth0_LogIn("auth0ConnectionString");
+            mainAbsoluteLayout.Children.Remove(boxv);
             await errorMessage();
 
         }

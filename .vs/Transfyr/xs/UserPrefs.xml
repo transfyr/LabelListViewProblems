@@ -1,34 +1,32 @@
 ﻿<Properties StartupConfiguration="{4A1B9525-8A12-4E52-8EE9-EF80D37DA60A}|Default">
   <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
-  <MonoDevelop.Ide.ItemProperties.Transfyr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A0497141-6E46-483C-8BFD-89265CC9BBFC" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/TransfyrPage.xaml.cs">
+  <MonoDevelop.Ide.ItemProperties.Transfyr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4523C04-1FE1-459A-AC5D-9979E48E4AE7" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../.nuget/packages/plugin.permissions/3.0.0.12/readme.txt">
     <Files>
-      <File FileName="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" Line="37" Column="14" />
+      <File FileName="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" Line="36" Column="22" />
       <File FileName="../../.nuget/packages/plugin.permissions/3.0.0.12/readme.txt" Line="1" Column="1" />
-      <File FileName="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Source Not Available" />
-      <File FileName="Transfyr/Transfyr/TransfyrPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" Line="141" Column="73" />
+      <File FileName="Transfyr/Transfyr/TransfyrPage.xaml.cs" Line="65" Column="1" />
       <File FileName="Transfyr/Transfyr/TransfyrPage.xaml" />
+      <File FileName="Transfyr/Transfyr/InitialPage.xaml.cs" Line="49" Column="9" />
+      <File FileName="Transfyr/Transfyr/GroupPage.xaml" />
+      <File FileName="Transfyr/Transfyr/GroupPage.xaml.cs" Line="63" Column="42" />
+      <File FileName="Transfyr/Transfyr/IndividualPage.xaml" />
+      <File FileName="Transfyr/Transfyr/IndividualPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Transfyr" expanded="True">
             <Node name="Transfyr" expanded="True">
-              <Node name="TransfyrPage.xaml" expanded="True">
-                <Node name="TransfyrPage.xaml.cs" selected="True" />
-              </Node>
+              <Node name="GroupPage.xaml" expanded="True" selected="True" />
+              <Node name="IndividualPage.xaml" expanded="True" />
+              <Node name="InitialPage.xaml" expanded="True" />
+              <Node name="PersonalInformationPage.xaml" expanded="True" />
+              <Node name="TransfyrPage.xaml" expanded="True" />
             </Node>
-            <Node name="Transfyr.Android" expanded="True">
-              <Node name="Properties" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="xml" expanded="True" />
-              </Node>
-              <Node name="SourceCode" expanded="True">
-                <Node name="DPServices" expanded="True" />
-                <Node name="XCropImage" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="Transfyr.Android" expanded="True" />
+            <Node name="Transfyr.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -38,13 +36,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="106" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="110" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="117" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="119" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="107" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="111" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="118" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="120" column="1" />
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="29" column="1" />
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/PersonalInformationPage.xaml.cs" relfile="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" line="135" column="1" />
       <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/PersonalInformationPage.xaml.cs" relfile="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" line="137" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="35" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Auth0Interface_Android.cs" relfile="Transfyr/Transfyr.Android/Auth0Interface_Android.cs" line="36" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/PersonalInformationPage.xaml.cs" relfile="Transfyr/Transfyr/PersonalInformationPage.xaml.cs" line="134" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

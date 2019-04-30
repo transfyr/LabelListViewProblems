@@ -44,13 +44,13 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Padding="1" Margin="1,1,1,1" HeightRequest="200"
+                                <Grid Padding="1" Margin="1,1,1,1" HeightRequest="197"
                                       BackgroundColor="White" 
                                       RowSpacing="1" ColumnSpacing="1">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="17*"/>
-                                        <RowDefinition Height="30*"/>
-                                        <RowDefinition Height="53*"/>
+                                        <RowDefinition Height="33*"/>
+                                        <RowDefinition Height="59*"/>
+                                        <RowDefinition Height="105*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="9*"/>
@@ -107,9 +107,9 @@
                                                 Grid.Row="2" Grid.Column="0"
                                                 Grid.ColumnSpan="2"
                                                 BackgroundColor="Black">
-                                        <RelativeLayout HeightRequest="90"
+                                        <RelativeLayout HeightRequest="104"
                                                         BackgroundColor="Black">
-                                            <ListView Rotation="270" RowHeight="90" HeightRequest="90"
+                                            <ListView Rotation="270" RowHeight="104" HeightRequest="104"
                                                       BackgroundColor="Black"
                                                       ItemsSource="{Binding members}"
                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-45}"

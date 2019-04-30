@@ -53,11 +53,12 @@ namespace Transfyr
 
             //obtain a list of all the groups
             List<Group> noIndGroupList = App.groupList.Where(p => p.indGroup == 0).ToList();
-            //set the row height for the listview
-            groupEntryHeight = (mAbsLayout.Height - 40) * .27;
-            groupStackLayout.RowHeight = Convert.ToInt32(groupEntryHeight);
+            ////set the row height for the listview
+            //groupEntryHeight = (mAbsLayout.Height - 40) * .27;
+            //groupStackLayout.RowHeight = Convert.ToInt32(groupEntryHeight);
+
             //bind the group list to the listview
-            bindedModel = new MultiSelectViewModelClass(noIndGroupList, groupEntryHeight * .53 * .77 * 1.25);
+            bindedModel = new MultiSelectViewModelClass(noIndGroupList, 200 * .53 * .77 * 1.25);//groupEntryHeight * .53 * .77 * 1.25);
             bindedModel.Navigation = Navigation;
             BindingContext = bindedModel;
             //if there are no groups, enlarge the 'no group' message
