@@ -135,7 +135,7 @@ namespace Transfyr
             string imageExtension;
             Stream imageStream;             if (cropedBytes != null)
             {
-                var bytesString = Convert.ToBase64String(cropedBytes);
+                var bytesString = Convert.ToBase64String(cropedBytes); 
                 //obtain the image type. image must be either png or jpg
                 var imageType = bytesString.Substring(0, 5).ToUpper();
                 imageExtension = "";

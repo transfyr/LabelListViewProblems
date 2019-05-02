@@ -123,9 +123,9 @@
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/Transfyr.iOS.csproj.CopyComplete
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/Transfyr.iOS.exe
 /Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/Transfyr.iOS.pdb
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/ibtool/_BundleResourceWithLogicalName.items
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/actool/_PartialAppManifest.items
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/actool/_BundleResourceWithLogicalName.items
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/coremlc/_PartialAppManifest.items
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/coremlc/_BundleResourceWithLogicalName.items
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad5.4-12.2/optimized/
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/ibtool/_BundleResourceWithLogicalName.items
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/actool/_PartialAppManifest.items
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/actool/_BundleResourceWithLogicalName.items
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/coremlc/_PartialAppManifest.items
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/coremlc/_BundleResourceWithLogicalName.items
+/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad7.1-12.2/optimized/

@@ -156,7 +156,7 @@
                     </Forms9Patch:Label.GestureRecognizers>
                 </Forms9Patch:Label>
             </Grid>-->
-        <Forms9Patch:Label x:Name="EmailLabel"
+        <!--<Forms9Patch:Label x:Name="EmailLabel"
                                Text="Email LogIn"
                                BackgroundColor="{StaticResource logoBackgroundColor}"
                                TextColor="Black" FontAttributes="Italic"
@@ -171,6 +171,6 @@
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="toEmailLogIn"/>
             </Label.GestureRecognizers>
-        </Forms9Patch:Label>
+        </Forms9Patch:Label>-->
     </Forms9Patch:AbsoluteLayout>
 </ContentPage>

@@ -15,8 +15,8 @@
     <AbsoluteLayout x:Name="mAbsLayout">
         <SearchBar x:Name="searchBar" 
                    BackgroundColor="White" 
-                   TextColor="Black"
-                   PlaceholderColor="Black"
+                   TextColor="Black" 
+                   PlaceholderColor="Black" 
                    CancelButtonColor="{StaticResource logoLightBlue}"
                    Placeholder="Search"
                    TextChanged="Handle_TextChanged"

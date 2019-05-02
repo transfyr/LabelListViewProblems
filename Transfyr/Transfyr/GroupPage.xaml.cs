@@ -41,6 +41,8 @@ namespace Transfyr
         {
             base.OnAppearing();
 
+            //searchBar.FontSize = mAbsLayout.Height * 0.03 * .53 * .77 * 1.25;
+
             var assembly = typeof(GroupPage);
             //emailImage.Source = ImageSource.FromResource("Transfyr.Assets.Images.darkBlueEmailPic.png", assembly);
 
