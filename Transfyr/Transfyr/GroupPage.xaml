@@ -39,8 +39,7 @@
                                    WidthRequest="0" HeightRequest="0"/>
                 <ListView x:Name="groupStackLayout"
                           ItemsSource="{Binding DataListGroup, Mode=TwoWay}" RowHeight="200"
-                          BackgroundColor="{StaticResource logoLightBlue}"
-                          IsPullToRefreshEnabled="true">
+                          BackgroundColor="{StaticResource logoLightBlue}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

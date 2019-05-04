@@ -33,8 +33,7 @@
                                    WidthRequest="0" HeightRequest="0"/>
                 <ListView x:Name="contactStackLayout"
                           ItemsSource="{Binding DataList, Mode=TwoWay}"
-                          BackgroundColor="{StaticResource logoLightBlue}" RowHeight="200"
-                          IsPullToRefreshEnabled="true">
+                          BackgroundColor="{StaticResource logoLightBlue}" RowHeight="200">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
