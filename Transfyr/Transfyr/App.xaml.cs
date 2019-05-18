@@ -13,7 +13,10 @@ namespace Transfyr
         public static string s3_access_key = string.Empty;
         public static string s3_secret_access_key = string.Empty;
         public static string s3_session_token = string.Empty;
-        public static User user = new User();
+        public static User user = new User()
+        { 
+            userId= "EGV3UHHQE0AGNGQ427W2", userPassword= "linkedin|kaQJtUKJKo"
+        };
         public static List<Group> groupList = new List<Group>();
         public static List<User> contacts = new List<User>();
         public static string justAdded = "";
@@ -31,7 +34,7 @@ namespace Transfyr
 
             Constants.OnPageLoading();
 
-            MainPage = new NavigationPage(new InitialPage());
+            MainPage = new NavigationPage(new IndividualPage());
         }
 
         protected override void OnStart()

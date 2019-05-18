@@ -1,4 +1,4 @@
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/Transfyr.iOS.exe
+/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/Transfyr.iOS.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.8.0.2/lib/mono/Xamarin.iOS/mscorlib.dll
 /Users/transfyr/.nuget/packages/xamarin.forms/3.6.0.344457/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.8.0.2/lib/mono/Xamarin.iOS/Facades/netstandard.dll
@@ -21,7 +21,7 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.8.0.2/lib/mono/Xamarin.iOS/System.Xml.Linq.dll
 /Users/transfyr/.nuget/packages/xamarin.forms/3.6.0.344457/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll
 /Users/transfyr/.nuget/packages/xamarin.forms/3.6.0.344457/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll
-/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
+/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
 /Users/transfyr/.nuget/packages/xamarin.forms/3.6.0.344457/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
 /Users/transfyr/.nuget/packages/forms9patch/1.6.7.2/lib/Xamarin.iOS10/Forms9Patch.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.8.0.2/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
@@ -61,7 +61,6 @@
 /Users/transfyr/.nuget/packages/zxing.net.mobile/2.4.1/lib/Xamarin.iOS10/zxing.portable.dll
 /Users/transfyr/.nuget/packages/zxing.net.mobile/2.4.1/lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll
 /Users/transfyr/.nuget/packages/plugin.permissions/3.0.0.12/lib/xamarinios10/Plugin.Permissions.dll
-/Users/transfyr/.nuget/packages/xam.plugin.media/4.0.1.5/lib/xamarinios10/Plugin.Media.dll
 /Users/transfyr/.nuget/packages/sharpnado.presentation.forms/1.1.0/lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.dll
 /Users/transfyr/.nuget/packages/sharpnado.presentation.forms/1.1.0/lib/Xamarin.iOS10/Sharpnado.Infrastructure.dll
 /Users/transfyr/.nuget/packages/sqlite-net-pcl/1.5.231/lib/netstandard1.1/SQLite-net.dll

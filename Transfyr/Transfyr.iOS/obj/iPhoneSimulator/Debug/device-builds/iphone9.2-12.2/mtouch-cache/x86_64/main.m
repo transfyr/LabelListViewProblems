@@ -15,8 +15,6 @@ void xamarin_register_assemblies_impl ()
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("SkiaSharp.Views.iOS.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
-	xamarin_open_and_register ("Plugin.Media.dll", &exception_gchandle);
-	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Auth0.OidcClient.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("TOCropBinding.dll", &exception_gchandle);

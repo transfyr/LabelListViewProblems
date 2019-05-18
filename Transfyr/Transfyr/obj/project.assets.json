@@ -4391,11 +4391,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj",
+      "projectUniqueName": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj",
       "projectName": "Transfyr",
-      "projectPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj",
+      "projectPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj",
       "packagesPath": "/Users/transfyr/.nuget/packages/",
-      "outputPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/obj/",
+      "outputPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

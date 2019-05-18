@@ -6781,11 +6781,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Transfyr.Android.csproj",
+      "projectUniqueName": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.Android/Transfyr.Android.csproj",
       "projectName": "Transfyr.Android",
-      "projectPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/Transfyr.Android.csproj",
+      "projectPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.Android/Transfyr.Android.csproj",
       "packagesPath": "/Users/transfyr/.nuget/packages/",
-      "outputPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.Android/obj/",
+      "outputPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -6800,8 +6800,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj": {
-              "projectPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj"
+            "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj": {
+              "projectPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj"
             }
           }
         }

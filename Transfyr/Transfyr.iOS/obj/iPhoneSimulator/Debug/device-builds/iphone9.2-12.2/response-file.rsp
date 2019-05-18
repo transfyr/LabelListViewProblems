@@ -1,5 +1,5 @@
---cache=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/mtouch-cache
---sim=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/Transfyr.iOS.app
+--cache=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/mtouch-cache
+--sim=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/Transfyr.iOS.app
 --executable=Transfyr.iOS
 --debug
 --nolink
@@ -9,7 +9,7 @@
 --aot-options=-O=-float32
 --http-message-handler=NSUrlSessionHandler
 --abi=x86_64
---symbollist=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/mtouch-symbols.list
+--symbollist=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-12.2/mtouch-symbols.list
 --dsym=no
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll
@@ -18,7 +18,7 @@
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.IO.Compression.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll
--r=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
+-r=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Primitives.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Registry.AccessControl.dll
@@ -264,7 +264,7 @@
 -r=/Users/transfyr/.nuget/packages/zxing.net.mobile/2.4.1/lib/Xamarin.iOS10/zxing.portable.dll
 -r=/Users/transfyr/.nuget/packages/zxing.net.mobile.forms/2.4.1/lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll
 -r=/Users/transfyr/.nuget/packages/zxing.net.mobile.forms/2.4.1/lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll
--r=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
+-r=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/bin/Debug/netstandard2.0/Transfyr.dll
 --target-framework=Xamarin.iOS,v1.0
---root-assembly=/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/Transfyr.iOS.exe
+--root-assembly=/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/bin/iPhoneSimulator/Debug/Transfyr.iOS.exe
 -v -v

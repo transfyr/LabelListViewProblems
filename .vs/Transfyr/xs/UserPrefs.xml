@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{4FC36D53-691D-470B-80D5-1F39BFBA9D2D}|Default">
   <MonoDevelop.Ide.ItemProperties.Transfyr.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.device3" />
   <MonoDevelop.Ide.ItemProperties.Transfyr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D9484D4-4835-4F50-AAA5-D244D998E1A1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/InitialPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Transfyr/Transfyr/HomePage.xaml">
     <Files>
       <File FileName="../../.nuget/packages/plugin.permissions/3.0.0.12/readme.txt" Line="13" Column="2" />
       <File FileName="Transfyr/Transfyr/Helpers/Functions.cs" Line="185" Column="91" />
       <File FileName="Transfyr/Transfyr/ContactPage.xaml" />
-      <File FileName="Transfyr/Transfyr/App.xaml.cs" Line="23" Column="56" />
+      <File FileName="Transfyr/Transfyr/App.xaml.cs" Line="18" Column="79" />
       <File FileName="Transfyr/Transfyr/ContactPage.xaml.cs" Line="39" Column="45" />
-      <File FileName="Transfyr/Transfyr.iOS/Auth0Interface_iOS.cs" Line="48" Column="1" />
-      <File FileName="Transfyr/Transfyr/InitialPage.xaml" />
-      <File FileName="Transfyr/Transfyr/InitialPage.xaml.cs" Line="34" Column="14" />
+      <File FileName="Transfyr/Transfyr.iOS/Auth0Interface_iOS.cs" Line="1" Column="1" />
+      <File FileName="Transfyr/Transfyr/HomePage.xaml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,11 +24,8 @@
               <Node name="App.xaml" expanded="True" />
               <Node name="ContactPage.xaml" expanded="True" />
               <Node name="GroupPage.xaml" expanded="True" />
+              <Node name="HomePage.xaml" expanded="True" />
               <Node name="IndividualPage.xaml" expanded="True" />
-              <Node name="InitialPage.xaml" expanded="True" selected="True" />
-              <Node name="NotificationsPage.xaml" expanded="True" />
-              <Node name="PersonalInformationPage.xaml" expanded="True" />
-              <Node name="PersonalPage.xaml" expanded="True" />
             </Node>
             <Node name="Transfyr.Android" expanded="True">
               <Node name="Properties" expanded="True" />
@@ -44,10 +40,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="129" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="133" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="140" column="1" />
-      <Breakpoint file="/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="142" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="129" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="133" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="140" column="1" />
+      <Breakpoint file="/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/GroupPage.xaml.cs" relfile="Transfyr/Transfyr/GroupPage.xaml.cs" line="142" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

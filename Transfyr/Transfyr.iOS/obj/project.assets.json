@@ -8773,11 +8773,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/Transfyr.iOS.csproj",
+      "projectUniqueName": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/Transfyr.iOS.csproj",
       "projectName": "Transfyr.iOS",
-      "projectPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/Transfyr.iOS.csproj",
+      "projectPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/Transfyr.iOS.csproj",
       "packagesPath": "/Users/transfyr/.nuget/packages/",
-      "outputPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr.iOS/obj/",
+      "outputPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -8792,8 +8792,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj": {
-              "projectPath": "/Users/transfyr/Documents/TransfyrApp/Transfyr/Transfyr/Transfyr.csproj"
+            "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj": {
+              "projectPath": "/Users/transfyr/Documents/LLVP/Transfyr/Transfyr/Transfyr.csproj"
             }
           }
         }
