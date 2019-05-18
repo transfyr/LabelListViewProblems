@@ -51,7 +51,18 @@ namespace Transfyr
             qrImageButton.HeightRequest = Convert.ToInt32(mAbsLayout.Height / 20) * 2;
 
             Constants.OnPageLoading();
-            await Functions.refreshUserInfoAsync();
+
+            //check if there is an internet connection
+            //if there is not, Display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+            }
+            else
+            {
+                await Functions.refreshUserInfoAsync();
+            }
 
             //obtain a list of all the groups
             List<Group> noIndGroupList = App.groupList.Where(p => p.indGroup == 0).ToList();
@@ -86,6 +97,15 @@ namespace Transfyr
 
         public async void qrImageButton_ClickedAsync(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             //obtain permissions of the Camera 
             var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
             //check if permission status is already granted for the camera and photo storage. If not, request permission
@@ -101,7 +121,7 @@ namespace Transfyr
                 return;
             }
 
-            scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true });
+            scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true, DelayBetweenContinuousScans=3000 });
             scanPage.OnScanResult += async (result) =>
             {
                 scanPage.IsScanning = false;
@@ -132,7 +152,7 @@ namespace Transfyr
                     });
                     return;
                 }
-                if (App.justAdded == "-1")
+                else if (App.justAdded == "-1")
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {

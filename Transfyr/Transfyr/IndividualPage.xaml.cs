@@ -59,7 +59,18 @@ namespace Transfyr
             contactStackLayout.RowHeight = Convert.ToInt32(mainStackLayout.Height / 4);
             searchBar.HeightRequest = Convert.ToInt32(mainStackLayout.Height / 36.0);
 
-            await Functions.refreshUserInfoAsync();
+            //check if there is an internet connection
+            //if there is not, Display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+            }
+            else
+            {
+                await Functions.refreshUserInfoAsync();
+            }
+
             bindedModel = new MultiSelectViewModelClass(App.contacts, contactStackLayout.RowHeight);
             bindedModel.Navigation = Navigation;
             BindingContext = bindedModel;
@@ -83,6 +94,15 @@ namespace Transfyr
 
         public async void qrImageButton_ClickedAsync(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             //obtain permissions of the Camera 
             var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
             //check if permission status is already granted for the camera and photo storage. If not, request permission
@@ -98,7 +118,7 @@ namespace Transfyr
                 return;
             }
 
-            scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true });
+            scanPage = new ZXingScannerPage(new ZXing.Mobile.MobileBarcodeScanningOptions { AutoRotate = true, DelayBetweenContinuousScans = 3000 });
             scanPage.OnScanResult += async (result) =>
             {
                 scanPage.IsScanning = false;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 using Transfyr.Model;
 using Transfyr.Model.Queries;
 using Xamarin.Forms;
@@ -110,6 +111,26 @@ namespace Transfyr.Helpers
             App.typeError = -1;
         }
 
+        public static void checkInternetConnection()
+        {
+            //write code that checks if there is an internet connection.
+            //If there is, return App.internetConnection = true
+            //If there is not, return App.internetConnection = false
+            if(!CrossConnectivity.IsSupported)
+            {
+                App.internetConnection = true;
+                return;
+            }
+            if(CrossConnectivity.Current.IsConnected)
+            {
+                App.internetConnection = true;
+            }
+            else
+            {
+                App.internetConnection = false;
+            }
+        }
+
         public static async Task refreshUserInfoAsync()
         {
             var url = Constants.AWS_RDS_API + "type=refreshUserInfo";
@@ -161,8 +182,8 @@ namespace Transfyr.Helpers
                         return;
                     }
                     App.user = UserLogIn.QueriedToUser(userLogIn.type.user);
-                    App.groupList = userLogIn.type.group.Select(s => Group.QueriedToGroup(s)).ToList();
-                    App.contacts = userLogIn.type.member.Select(s => UserLogIn.QueriedToMember(s)).ToList();
+                    App.groupList = userLogIn.type.group.Select(s => Group.QueriedToGroup(s)).OrderBy(s => s.groupName).ToList();
+                    App.contacts = userLogIn.type.member.Select(s => UserLogIn.QueriedToMember(s)).OrderBy(s => s.lastName_bc).ToList();
                     try
                     {
                         App.notifs.indNotifs = Notifs.QueriedToNotifs(userLogIn.type.indNotifs);

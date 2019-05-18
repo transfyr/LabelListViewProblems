@@ -9,6 +9,7 @@ using System.ComponentModel;
 using Plugin.Messaging;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using System.Collections.ObjectModel;
 
 namespace Transfyr.Model
 {
@@ -244,8 +245,9 @@ namespace Transfyr.Model
 
         public MultiSelectViewModelClass(List<Group> data, double width)
         {
+            ObservableRangeCollection<Members> members = new ObservableRangeCollection<Members>();
             List<SelectableUserWrapper<Group>> dataList = new List<SelectableUserWrapper<Group>>();
-            List<Members> members = new List<Members>();
+            //List<Members> members = new List<Members>();
 
             goToGroupPage = new Command<string>(async (key) =>
             {
@@ -356,7 +358,7 @@ namespace Transfyr.Model
                     })
                 });
                 //empty the members list
-                members = new List<Members>();
+                members = new ObservableRangeCollection<Members>();//List<Members>();
             };
 
             DataListGroup = dataList;

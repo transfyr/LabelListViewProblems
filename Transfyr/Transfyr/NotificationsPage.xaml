@@ -34,9 +34,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Forms9Patch:Label HeightRequest="50"
+                                <Forms9Patch:Label HeightRequest="50" VerticalOptions="CenterAndExpand"
                                                    BackgroundColor="{StaticResource logoLightGray}" 
-                                                   AutoFit="Width" Lines="1"
+                                                   AutoFit="Lines" Lines="2"
                                                    FontSize="{Binding fontSize}" TextColor="Black"
                                                    Text="{Binding note}"/>
                             </ViewCell>
@@ -60,9 +60,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Forms9Patch:Label HeightRequest="50"
+                                <Forms9Patch:Label HeightRequest="50" VerticalOptions="CenterAndExpand"
                                                    BackgroundColor="{StaticResource logoLightGray}" 
-                                                   AutoFit="Width" Lines="1"
+                                                   AutoFit="Lines" Lines="2"
                                                    FontSize="{Binding fontSize}" TextColor="Black"
                                                    Text="{Binding note}"/>
                             </ViewCell>

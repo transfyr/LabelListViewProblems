@@ -70,15 +70,15 @@ namespace Transfyr
 
             Constants.OnPageLoading();
             // set the row height
-            contactInformation.rowHeight = Convert.ToInt32(groupScrollView.Height / 9);
+            contactInformation.rowHeight = Convert.ToInt32(mainScrollView.Height / 6);
             // set the font size in the contact information
-            contactInformation.fontSizes = new double[] { Convert.ToDouble(contactContentPage.Width * 20.0 / 373.0) };
+            contactInformation.fontSizes = new double[] { Convert.ToDouble(mAbsLayout.Width * 20.0 / 373.0) };
             BindingContext = contactInformation;
             mainAbsoluteLayout.HeightRequest = Convert.ToInt32(mainScrollView.Height * 1.6);
             //emailLabel.Text = Convert.ToString(mainScrollView.Width);
 
-            qrImageModal.HeightRequest = Convert.ToInt32(Math.Min(contactContentPage.Height, contactContentPage.Width) * 7.0 / 10.0);
-            qrImageModal.WidthRequest = Convert.ToInt32(Math.Min(contactContentPage.Height, contactContentPage.Width) * 7.0 / 10.0);
+            qrImageModal.HeightRequest = Convert.ToInt32(Math.Min(mAbsLayout.Height, mAbsLayout.Width) * 7.0 / 10.0);
+            qrImageModal.WidthRequest = Convert.ToInt32(Math.Min(mAbsLayout.Height, mAbsLayout.Width) * 7.0 / 10.0);
 
         }
 
@@ -100,8 +100,17 @@ namespace Transfyr
             qrImageModal.IsVisible = true;
         }
 
-        async void savePersonalNotesButton_HandleClicked(object sender, System.EventArgs e)
+        async public void savePersonalNotesButton_HandleClicked(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             if (personalMessageEntry.Text == contactInformation.item.personalMessage)
             {
                 await DisplayAlert("Notes Saved", "Notes for " + contactInformation.fullName + " saved.", "Ok");
@@ -129,6 +138,15 @@ namespace Transfyr
 
         private async void DELETE_Handle_Clicked(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             var answer = await DisplayAlert("Delete User?", "Are you sure you want to permanently delete " + contactInformation.fullName + "?", "Yes", "No");
             if (!answer)
             {
@@ -148,7 +166,7 @@ namespace Transfyr
                 return;
             }
             await DisplayAlert("User Deleted", contactInformation.fullName + " has been deleted.", "Ok");
-            await Navigation.PushAsync(new HomePage(1));
+            await Navigation.PopAsync();
         }
     }
 }

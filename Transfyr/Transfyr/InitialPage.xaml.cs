@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Transfyr.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -39,10 +41,35 @@ namespace Transfyr
                 }
                 else
                 {
-                    //logout the user. All fields should be set to initial values.
-                    Functions.ResetApp();
-                    await DependencyService.Get<Auth0Interface>().LogOut_User();
+                    //check internet Connection
+                    Functions.checkInternetConnection();
+                    //if there is an internet connection, log out of the app
+                    if (App.internetConnection)
+                    {
+                        //logout the user. All fields should be set to initial values.
+                        Functions.ResetApp();
+                        await DependencyService.Get<Auth0Interface>().LogOut_User();
+                        mainAbsoluteLayout.Children.Remove(boxv);
+                    }
+                    //if there is not an internet connection, display that there is not an internet connection
+                    //and return to the home page
+                    else
+                    {
+                        await DisplayAlert("Logout unsucccessful", "No internet connection. Please try again", "Ok");
+                        await Navigation.PushAsync(new HomePage());
+                    }
                 }
+            }
+            //app is initializing. Check if there is an internet connection
+            else
+            {
+                Functions.checkInternetConnection();
+                //if there is no internet connection, Display an alert.
+                if(!App.internetConnection)
+                {
+                    await DisplayAlert("No internet connection.", "Unable to access internet. Restart and try again.", "Ok");
+                }
+                mainAbsoluteLayout.Children.Remove(boxv);
             }
         }
 
@@ -63,11 +90,21 @@ namespace Transfyr
             AbsoluteLayout.SetLayoutBounds(boxv, new Rectangle(0, 0, 1, 1));
             mainAbsoluteLayout.Children.Add(boxv);
 
+            //check if there is an internet connection
+            //if there is not, return display alert and return
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Restart and try again.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
+                return;
+            }
+
             Label labelClicked = (Label)sender;
             string loginType = labelClicked.Text;
             await DependencyService.Get<Auth0Interface>().Auth0_LogIn("auth0ConnectionString");
             mainAbsoluteLayout.Children.Remove(boxv);
-            await errorMessage();
+            await errorMessage(); 
 
         }
 

@@ -15,7 +15,12 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     BackgroundColor="White">
-        <Forms9Patch:Label Text="Profile Picture"
+        <BoxView BackgroundColor="White"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0,0,1,.24"/>
+        <Forms9Patch:Label x:Name="profilePictureLabel" Text="Profile Picture"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Center"
@@ -23,6 +28,7 @@
                            BackgroundColor="White"
                            TextColor="Black" FontFamily="Courier"
                            AutoFit="Width" Lines="1"
+                           FittedFontSizeChanged="Handle_FittedFontSizeChanged_1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0,0.3,0.03"/>
         <Image x:Name="personalImage"
@@ -39,7 +45,7 @@
                 <TapGestureRecognizer Tapped = "changePhoto" CommandParameter="personal"/>
             </Image.GestureRecognizers>
         </Image>
-        <Forms9Patch:Label Text="Prefix:    "
+        <Forms9Patch:Label x:Name="prefixLabel" Text="Prefix:    "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -49,7 +55,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.378,0,0.18,0.06"/>
-        <Forms9Patch:Label Text="First Name:"
+        <Forms9Patch:Label x:Name="fNameLabel" Text="First Name:"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -57,9 +63,10 @@
                            BackgroundColor="White"
                            TextColor="Black" FontFamily="Courier"
                            AutoFit="Width" Lines="1"
+                           FittedFontSizeChanged="Handle_FittedFontSizeChanged"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.378,0.06382,0.18,0.06"/>
-        <Forms9Patch:Label Text="Last Name: "
+        <Forms9Patch:Label x:Name="lNameLabel" Text="Last Name: "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -69,7 +76,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.378,0.1276,0.18,0.06"/>
-        <Forms9Patch:Label Text="Suffix:    "
+        <Forms9Patch:Label x:Name="suffixLabel" Text="Suffix:    "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -79,7 +86,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.378,0.19148,0.18,0.06"/>
-        <Entry Text="{Binding item.prefix_bc}"
+        <Entry x:Name="prefixEntry" Text="{Binding item.prefix_bc}"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"
                HorizontalTextAlignment="Start"
@@ -89,7 +96,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0,0.5,0.06"/>
-        <Entry Text="{Binding item.firstName_bc}"
+        <Entry x:Name="fNameEntry" Text="{Binding item.firstName_bc}"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"
                HorizontalTextAlignment="Start"
@@ -99,7 +106,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.06382,0.5,0.06"/>
-        <Entry Text="{Binding item.lastName_bc}"
+        <Entry x:Name="lNameEntry" Text="{Binding item.lastName_bc}"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"
                HorizontalTextAlignment="Start"
@@ -109,7 +116,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.1276,0.5,0.06"/>
-        <Entry Text="{Binding item.suffix_bc}"
+        <Entry x:Name="suffixEntry" Text="{Binding item.suffix_bc}"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"
                HorizontalTextAlignment="Start"
@@ -119,7 +126,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.19148,0.5,0.06"/>
-        <Forms9Patch:Label Text="Company Info    "
+        <Forms9Patch:Label x:Name="companyInfoLabel" Text="Company Info    "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -129,7 +136,12 @@
                            AutoFit="Width" Lines="0"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.2539,1,0.055"/>
-        <Forms9Patch:Label Text="Job Title: "
+        <BoxView BackgroundColor="White"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0,.335227,1,.12"/>
+        <Forms9Patch:Label x:Name="jobTitleLabel" Text="Job Title: "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -139,7 +151,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.3138,0.18,0.06"/>
-        <Forms9Patch:Label Text="Company:   "
+        <Forms9Patch:Label x:Name="companyLabel" Text="Company:   "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -169,7 +181,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0.38,0.3776,0.5,0.06"/>
-        <Forms9Patch:Label Text=" Company Logo  "
+        <Forms9Patch:Label x:Name="companyLogoLabel" Text=" Company Logo  "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Center"
@@ -205,7 +217,7 @@
                 <TapGestureRecognizer Tapped = "changePhoto" CommandParameter="company"/>
             </BoxView.GestureRecognizers>
         </BoxView>
-        <Forms9Patch:Label Text="Location        "
+        <Forms9Patch:Label x:Name="locationLabel" Text="Location        "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -215,7 +227,12 @@
                            AutoFit="Width" Lines="0"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.4391,1,0.055"/>
-        <Forms9Patch:Label Text="City:      "
+        <BoxView BackgroundColor="White"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0,.5340909,1,.12"/>
+        <Forms9Patch:Label x:Name="cityLabel" Text="City:      "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -225,7 +242,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.5,0.18,0.06"/>
-        <Forms9Patch:Label Text="State:     "
+        <Forms9Patch:Label x:Name="stateLabel" Text="State:     "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -235,7 +252,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.5638,0.18,0.06"/>
-        <Forms9Patch:Label Text="Country:   "
+        <Forms9Patch:Label x:Name="countryLabel" Text="Country:   "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -275,7 +292,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.5638,0.31,0.06"/>
-        <Forms9Patch:Label Text="Contact Info    "
+        <Forms9Patch:Label x:Name="contactInfoLabel" Text="Contact Info    "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -285,7 +302,12 @@
                            AutoFit="Width" Lines="0"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.6243,1,0.055"/>
-        <Forms9Patch:Label Text="Email:     "
+        <BoxView BackgroundColor="White"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0,.786585,1,.18"/>
+        <Forms9Patch:Label x:Name="emailLabel" Text="Email:     "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -295,7 +317,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.6861,0.18,0.06"/>
-        <Forms9Patch:Label Text="Phone:     "
+        <Forms9Patch:Label x:Name="phoneLabel" Text="Phone:     "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -305,7 +327,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.6097,0.6861,0.18,0.06"/>
-        <Forms9Patch:Label Text="Website:   "
+        <Forms9Patch:Label x:Name="websiteLabel" Text="Website:   "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -315,7 +337,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.75,0.18,0.06"/>
-        <Forms9Patch:Label Text="Fax:       "
+        <Forms9Patch:Label x:Name="faxLabel" Text="Fax:       "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -325,7 +347,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0.6097,0.75,0.18,0.06"/>
-        <Forms9Patch:Label Text="LinkedIn:  "
+        <Forms9Patch:Label x:Name="linkedinLabel" Text="LinkedIn:  "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -335,7 +357,7 @@
                            AutoFit="Width" Lines="1"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.8138,0.18,0.06"/>
-        <Forms9Patch:Label Text="Twitter:   "
+        <Forms9Patch:Label x:Name="twitterLabel" Text="Twitter:   "
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -405,7 +427,7 @@
                PlaceholderColor="Black"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="1,0.8138,0.31,0.06"/>
-        <Forms9Patch:Label Text="Personal Message"
+        <Forms9Patch:Label x:Name="personalMessageLabel" Text="Personal Message"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand"
                            HorizontalTextAlignment="Start"
@@ -413,6 +435,7 @@
                            BackgroundColor="{StaticResource logoBackgroundColor}"
                            TextColor="{StaticResource logoDarkBlue}"
                            AutoFit="Width" Lines="0"
+                           FittedFontSizeChanged="Handle_FittedFontSizeChanged_2"
                            AbsoluteLayout.LayoutFlags="All"
                            AbsoluteLayout.LayoutBounds="0,0.873,1,0.055"/>
         <Editor Text="{Binding item.personalMessage}"

@@ -85,6 +85,17 @@ namespace Transfyr
                 BackgroundColor = Color.DimGray,
                 Opacity = 0.5
             };
+
+            //check if there is an internet connection
+            //if there is not, return display alert and return
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                mainAbsoluteLayout.Children.Remove(boxv);
+                return;
+            }
+
             AbsoluteLayout.SetLayoutFlags(boxv, AbsoluteLayoutFlags.All);
             AbsoluteLayout.SetLayoutBounds(boxv, new Rectangle(0, 0, 1, 1));
             mainAbsoluteLayout.Children.Add(boxv);
@@ -179,17 +190,65 @@ namespace Transfyr
             BindingContext = contactInformation;
             if (imageClass == "personal")
             {
-                personalImage.Source = ImageSource.FromStream(() => imageStream);
+                //personalImage.Source = ImageSource.FromStream(() => imageStream);
                 await DisplayAlert("Success", "Personal Picture Saved!", "Ok");
             }
             else
             {
-                companyImage.Source = ImageSource.FromStream(() => imageStream);
+                //companyImage.Source = ImageSource.FromStream(() => imageStream);
                 await DisplayAlert("Success", "Company Picture Saved!", "Ok");
             }
             mainAbsoluteLayout.Children.Remove(boxv);
-            await Navigation.PushAsync(new HomePage(3));
+            await Navigation.PopAsync();
             return;
+        }
+
+        void Handle_FittedFontSizeChanged(object sender, double e)
+        {
+            //obtain the forms9patch label that called the handle fitted property, firstNameLabel
+            Forms9Patch.Label labelClicked = (Forms9Patch.Label)sender;
+            //obtain the font size
+            double newfontsize = labelClicked.FittedFontSize;
+            //set all labels using this size font to the correct font
+            prefixLabel.SynchronizedFontSize = newfontsize;
+            fNameLabel.SynchronizedFontSize = newfontsize;
+            lNameLabel.SynchronizedFontSize = newfontsize;
+            suffixLabel.SynchronizedFontSize = newfontsize;
+            jobTitleLabel.SynchronizedFontSize = newfontsize;
+            companyLabel.SynchronizedFontSize = newfontsize;
+            cityLabel.SynchronizedFontSize = newfontsize;
+            stateLabel.SynchronizedFontSize = newfontsize;
+            countryLabel.SynchronizedFontSize = newfontsize;
+            emailLabel.SynchronizedFontSize = newfontsize;
+            phoneLabel.SynchronizedFontSize = newfontsize;
+            websiteLabel.SynchronizedFontSize = newfontsize;
+            faxLabel.SynchronizedFontSize = newfontsize;
+            linkedinLabel.SynchronizedFontSize = newfontsize;
+            twitterLabel.SynchronizedFontSize = newfontsize;
+        }
+
+        void Handle_FittedFontSizeChanged_1(object sender, double e)
+        {
+            //obtain the forms9patch label that called the handle fitted property, profilePictureLabel
+            Forms9Patch.Label labelClicked = (Forms9Patch.Label)sender;
+            //obtain the font size
+            double newfontsize = labelClicked.FittedFontSize;
+            //set all labels using this size font to the correct font
+            profilePictureLabel.SynchronizedFontSize = newfontsize;
+            companyLogoLabel.SynchronizedFontSize = newfontsize;
+        }
+
+        void Handle_FittedFontSizeChanged_2(object sender, double e)
+        {
+            //obtain the forms9patch label that called the handle fitted property, personalMessageLabel
+            Forms9Patch.Label labelClicked = (Forms9Patch.Label)sender;
+            //obtain the font size
+            double newfontsize = labelClicked.FittedFontSize;
+            //set all labels using this size font to the correct font
+            companyInfoLabel.SynchronizedFontSize = newfontsize;
+            locationLabel.SynchronizedFontSize = newfontsize;
+            contactInfoLabel.SynchronizedFontSize = newfontsize;
+            personalMessageLabel.SynchronizedFontSize = newfontsize;
         }
 
         public void obtainContactInformation()
@@ -206,6 +265,15 @@ namespace Transfyr
 
         private async void SAVE_Handle_ClickedAsync(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             //save all of the information for the group
             //obtain the url
             var url = Constants.AWS_RDS_API;
@@ -264,7 +332,7 @@ namespace Transfyr
             {
                 await DisplayAlert("Success", "Business Card Saved!", "Ok");
                 mainAbsoluteLayout.Children.Remove(boxv);
-                await Navigation.PushAsync(new HomePage(3));
+                await Navigation.PopAsync();
                 return;
             }
             //remove the first character, an unnecessary comma, and the last character, an unnecessary space
@@ -283,7 +351,7 @@ namespace Transfyr
             }
             await DisplayAlert("Success", "Business Card Saved!", "Ok");
             mainAbsoluteLayout.Children.Remove(boxv);
-            await Navigation.PushAsync(new HomePage(3));//(new PersonalPage());
+            await Navigation.PopAsync();//(new PersonalPage());
             return;
         }
     }

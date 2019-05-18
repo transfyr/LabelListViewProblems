@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using SQLite;
@@ -98,7 +99,8 @@ namespace Transfyr.Model
         public ICommand emailMembersCommand { get; set; }
         public int rowHeight { get; set; }
         public double personalPageHeightRequest { get; set; }
-        public List<Members> members { get; set; }
+        public List<Members> members1 { get; set; }
+        public ObservableRangeCollection<Members> members { get; set; }
         public string darkBlueEmailImage { get; set; }
     }
 

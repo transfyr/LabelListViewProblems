@@ -47,13 +47,6 @@
 			<string>None</string>
 		</dict>
 	</array>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Document Type 1</string>
-		</dict>
-	</array>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Transfyr needs to access your Calendar</string>
 	<key>NSPhotoLibraryUsageDescription</key>

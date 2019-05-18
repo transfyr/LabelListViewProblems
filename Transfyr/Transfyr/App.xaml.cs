@@ -19,11 +19,12 @@ namespace Transfyr
         public static string justAdded = "";
         public static Notifs notifs = new Notifs();
         public static int typeError = -1;
-        public static double fontConstant1 = 30.0 / 440.0;
+        public static double fontConstant1 = 30.0 / 600.0;
         public static double fontConstant2 = 30.0 / (871 * .27 * .2);
         public static double fontConstant3 = 10.0 / (871 * .27 * .51 * .2);
         public static double fontConstant4 = 16.0 / (871 * .27 * .2);
         public static double layoutHeight;
+        public static bool internetConnection = true;
         public App()
         {
             InitializeComponent();

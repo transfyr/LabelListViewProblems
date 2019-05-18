@@ -5,6 +5,7 @@
              x:Name="groupPageContent"
              xmlns:Assets="clr-namespace:Transfyr.Assets"
              xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
              BackgroundColor="{StaticResource logoBackgroundColor}">
 
     <ContentPage.ToolbarItems>
@@ -39,7 +40,7 @@
                                    WidthRequest="0" HeightRequest="0"/>
                 <ListView x:Name="groupStackLayout"
                           ItemsSource="{Binding DataListGroup, Mode=TwoWay}" RowHeight="200"
-                          BackgroundColor="{StaticResource logoLightBlue}">
+                          BackgroundColor="{StaticResource logoBackgroundColor}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -102,23 +103,33 @@
                                                                   CommandParameter="{Binding item.groupId}"/>
                                         </Forms9Patch:Label.GestureRecognizers>
                                     </Forms9Patch:Label>
+                                    <!--<ScrollView Orientation="Horizontal"
+                                                Grid.Row="2" Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                BackgroundColor="Black">
+                                        <renderedViews:HorizontalListView HeightRequest="100"
+                                                                          ItemsSource="{Binding members}"
+                                                                          ListLayout="Linear">
+                                            <renderedViews:HorizontalListView.ItemTemplate>-->
                                     <ScrollView Orientation="Horizontal"
                                                 Grid.Row="2" Grid.Column="0"
                                                 Grid.ColumnSpan="2"
                                                 BackgroundColor="Black">
-                                        <RelativeLayout HeightRequest="104"
-                                                        BackgroundColor="Black">
-                                            <ListView Rotation="270" RowHeight="104" HeightRequest="104"
+                                        <RelativeLayout HeightRequest="100"
+                                                        BackgroundColor="Black"
+                                                        VerticalOptions="Start">
+                                            <ListView Rotation="270" RowHeight="100" HeightRequest="100"
                                                       BackgroundColor="Black"
                                                       ItemsSource="{Binding members}"
-                                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-45}"
-                                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=45}"
-                                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=90}"
+                                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
                                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>
                                                         <ViewCell>
-                                                            <Grid Rotation="90" TranslationX="90" 
+                                                            <Grid HeightRequest="100" WidthRequest="100" 
+                                                                  Rotation="90" 
                                                                   Padding="1" Margin="0" 
                                                                   BackgroundColor="Black" 
                                                                   RowSpacing="0" ColumnSpacing="0">
@@ -163,6 +174,9 @@
                                             </ListView>
                                         </RelativeLayout>
                                     </ScrollView>
+                                            <!--</renderedViews:HorizontalListView.ItemTemplate>
+                                        </renderedViews:HorizontalListView>
+                                    </ScrollView>-->
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

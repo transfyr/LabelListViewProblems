@@ -91,6 +91,15 @@ namespace Transfyr
 
         private async void ADD_Handle_Clicked(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             //add new group for the user. The name, info and members are given
             var url = Constants.AWS_RDS_API + "type=addGroup";
             if (!string.IsNullOrEmpty(groupName.Text))
@@ -128,7 +137,7 @@ namespace Transfyr
                 return;
             }
             await DisplayAlert("Group Added", "The group has been added successfully.", "Ok");
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PopAsync();
         }
     }
 }

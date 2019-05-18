@@ -157,11 +157,20 @@ namespace Transfyr
 
         async void saveButton_ClickedAsync(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             //saveButtonClicked = true;
             await saveGroupFunction();
             if (App.typeError == 0)
             {
-                await Navigation.PushAsync(new HomePage());
+                await Navigation.PopAsync();
             }
         }
 
@@ -241,6 +250,15 @@ namespace Transfyr
 
         private async void DELETE_Handle_Clicked(object sender, System.EventArgs e)
         {
+            //check if there is an internet connection
+            //if there is not, display an alert
+            Functions.checkInternetConnection();
+            if (!App.internetConnection)
+            {
+                await DisplayAlert("No internet connection.", "Unable to access internet. Please try again.", "Ok");
+                return;
+            }
+
             var answer = await DisplayAlert("Delete Group?", "Are you sure you want to delete " + groupName.Text + "?", "Yes", "No");
             if (!answer)
             {
@@ -260,7 +278,7 @@ namespace Transfyr
                 return;
             }
             await DisplayAlert("Group Deleted", "The group has been deleted successfully.", "Ok");
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PopAsync();
         }
     }
 }
